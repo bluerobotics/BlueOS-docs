@@ -1,18 +1,17 @@
 +++
 title = "Advanced Usage"
 description = "BlueOS advanced usage documentation."
-date = 2024-04-05T01:20:00+11:00
+date = 2024-09-26T16:00:00+11:00
 template = "docs/page.html"
 sort_by = "weight"
 weight = 30
 draft = false
-aliases = ['/software/onboard/BlueOS-latest/advanced-usage', '/blueos/latest/advanced-usage']
 
 [extra]
 lead = ''
 toc = true
 top = false
-link_base = "https://github.com/bluerobotics/BlueOS/tree/1.2.3/core"
+link_base = "https://github.com/bluerobotics/BlueOS/tree/1.3/core"
 +++
 
 ## General Information
@@ -161,7 +160,7 @@ is wide enough, the sidebar automatically stays open.
 
 - The theme content at the top [is configurable](#theme-content)
 {% pirate() %}
-- [The development documentation](../../development/extensions/#web-interface-http-server)
+- [The development documentation](../development/extensions/#web-interface-http-server)
 specifies the requirements for a service page to appear in the sidebar
 {% end %}
 
@@ -285,7 +284,7 @@ and where relevant
 - its API documentation (in a live-testable form)
 - the current API version
 
-The individual services are documented [in the development documentation](../../development/core/#services).
+The individual services are documented [in the development documentation](../development/core/#services).
 {% end %}
 {{ easy_image(src="available-services", width=600, class="pirate") }}
 
@@ -318,7 +317,7 @@ versions
    - Previously-installed versions are kept locally on the device, unless
    manually deleted, which provides an easy route for roll-backs to undesired
    changes (e.g. during development)
-- Allows updating the [bootstrap image](../../development/bootstrap) to match the current version
+- Allows updating the [bootstrap image](../development/bootstrap) to match the current version
 - Allows loading remote versions (including from custom docker-hub repositories)
 - Allows manually uploading docker images from the surface computer
 - If an undetected failure somehow occurs in BlueOS (or if a broken version gets
@@ -541,6 +540,8 @@ peripherals. The 3D model can be rotated, and can be panned by clicking and drag
 while holding SHIFT. The camera icon can be used to capture a screenshot of the current
 view of the model, with a transparent background.
 
+{{ easy_image(src="vehicle-setup-overview", width=600) }}
+
 {% pirate() %}
 It is possible to override the displayed 3D model by placing an appropriate `.glb`
 file at `userdata/modeloverrides/<vehicle_type>/<vehicle_frame>.glb` (e.g.
@@ -548,24 +549,36 @@ file at `userdata/modeloverrides/<vehicle_type>/<vehicle_frame>.glb` (e.g.
 
 Documentation for the recommended process for creating a `.glb` file from a vehicle
 model is coming soon.
+
+In future this page will also allow 
+- using custom highlighting logic for model components
+- displaying device statuses from extensions
 {% end %}
 
-{{ easy_image(src="vehicle-setup-overview", width=600) }}
-
 The PWM Outputs tab allows configuring the servo function mappings
-(for motors, lights, camera tilt, etc), as well as manually testing the motors.
+(for motors, lights, camera tilt, etc), as well as manually testing the motors,
+and an automated check to detect motors that spin backwards. Relevant motors can be
+set to run on reversed control signals, so they spin in the expected direction.
 
 {{ easy_image(src="vehicle-setup-pwm-outputs", width=600) }}
 
-The Configure tab allows loading default parameter sets for a particular vehicle type.
+The Configure tab provides configuration and calibration options for the vehicle sensors and peripherals,
+including failsafes, and reverting parameters to their defaults.
+<br>`New in 1.3`
 
-{{ easy_image(src="vehicle-setup-configure", width=600) }}
+{{ easy_image(src="vehicle-setup-configure-params", width=600) }}
 
-In future this page will also allow 
-- running ArduSub's automatic motor direction detection
-- calibrating the autopilot sensors
-- using custom highlighting logic for model components
-- displaying device statuses from extensions
+{{ easy_image(src="vehicle-setup-configure-gyro", width=600) }}
+
+{{ easy_image(src="vehicle-setup-configure-accel", width=600) }}
+
+{{ easy_image(src="vehicle-setup-configure-compass", width=600) }}
+
+{{ easy_image(src="vehicle-setup-configure-baro", width=600) }}
+
+{{ easy_image(src="vehicle-setup-configure-lights", width=600) }}
+
+{{ easy_image(src="vehicle-setup-configure-failsafes", width=600) }}
 
 ### Video Streams
 {{ service(service="MAVLink Camera Manager", link="https://github.com/bluerobotics/mavlink-camera-manager/", port=6020) }}
@@ -642,15 +655,24 @@ it automatically (via MAVLink)
 {{ service(service="Kraken", port=9134, link="/services/kraken", based=true) }}
 
 The Extensions Manager is in charge of fetching, installing, updating, and managing
-[Extensions](../../development/extensions).
+[Extensions](../extensions).
 
-The Store tab shows
-[the available extensions](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/),
-which can be clicked to see information about the extension (including the settings,
-permissions requirements, and developer information), and allows selecting the version
-to install:
+The Store tab shows the available extensions, with a default filter which excludes
+the development example extensions.
+
 {{ easy_image(src="extensions-store", width=600) }}
-{{ easy_image(src="extensions-store-example", width=550) }}
+
+Clicking an extension card displays the developer information, default application settings
+and permissions, a description / basic usage instructions, and a dropdown to select which
+version of the extension to install (or uninstall):
+
+{{ easy_image(src="extensions-store-example", width=400) }}
+
+By default, the store searches the
+[BlueOS Extensions Repository](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/)
+for available extensions, but it is also possible to specify your own external collections
+of extensions:
+{{ easy_image(src="extensions-store-manifests", width=350) }}
 
 The Installed tab shows the resource usage of the installed extensions, and allows
 configuring them, checking their logs, and restarting or disabling them:
