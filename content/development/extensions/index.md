@@ -6,7 +6,6 @@ template = "docs/page.html"
 sort_by = "weight"
 weight = 40
 draft = false
-aliases = ['software/onboard/BlueOS-1.1/extensions']
 
 [extra]
 lead = ''
@@ -15,14 +14,14 @@ top = false
 +++
 
 {% note() %}
-This page provides context and development guidance for Extensions. For _installing_ and _using_ Extensions please refer to the [Extensions Manager](../../advanced-usage/#extensions-manager) section of the Advanced Usage page.
+This page provides context and development guidance for Extensions. For _installing_ and _using_ Extensions please refer to the [Extensions Manager](../../usage/advanced/#extensions-manager) section of the Advanced Usage page.
 {% end %}
 
 ## Context
 
 One of the primary aims of BlueOS is to be a platform that is readily extendable to the needs of each user. For maximum utility it should be easy to add support for custom hardware, add components to the user interface, and share developments with other BlueOS users, without compromising the base BlueOS experience.
 
-Accordingly, BlueOS has been designed with a containerised architecture, so the core functionality is kept separate from Extensions, and each can be distributed and updated independently of the other. The built in Extension system allows developers and users to find and install add-on software packages to BlueOS, and manage updates, permissions, and resource limits of those Extensions through the [Extensions Manager](../../advanced-usage/#extensions-manager).
+Accordingly, BlueOS has been designed with a containerised architecture, so the core functionality is kept separate from Extensions, and each can be distributed and updated independently of the other. The built in Extension system allows developers and users to find and install add-on software packages to BlueOS, and manage updates, permissions, and resource limits of those Extensions through the [Extensions Manager](../../usage/advanced/#extensions-manager).
 
 ## Implementation
 
@@ -37,7 +36,7 @@ The BlueOS Extensions system consists of three major components:
    - Anyone can [see which Extensions are available](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/), so (for example):
       - Device manufacturers can show that their hardware is supported on BlueOS vehicles
       - Users looking for hardware functionalities can find relevant device manufacturers
-1. The [**Extensions Manager**](../../advanced-usage/#extensions-manager), a BlueOS-core service that's in charge of fetching Extension Packages from the Bazaar, as well as running active Extensions, and monitoring and limiting their resource usage and hardware access
+1. The [**Extensions Manager**](../../usage/advanced/#extensions-manager), a BlueOS-core service that's in charge of fetching Extension Packages from the Bazaar, as well as running active Extensions, and monitoring and limiting their resource usage and hardware access
 
 {% note() %}
 In future there will also be [support for **file-based Plugins**](https://github.com/bluerobotics/BlueOS/issues/1939), which will extend the functionality of a running Docker Container (e.g. themes or 3D models for BlueOS-core, or extra components and/or documentation for a particular Extension). These will also be shareable and installable through the Bazaar.
@@ -71,7 +70,7 @@ A common usage process would follow:
 8. Repeat from step 4. until further interaction is no longer required
 
 ##### Backend Services
-- Communicate with each other services (via [APIs](../../advanced-usage/#available-services))
+- Communicate with each other services (via [APIs](../../usage/advanced/#available-services))
 - Typically run continuously while the vehicle is on
 - Have access to the vehicle computer hardware, including connected devices and the filesystem
 - May have internet access, if the vehicle computer does
@@ -334,7 +333,7 @@ Different types of Extensions have different functionality, and there are often 
    1. The fetched information is then compiled and published to the [Manifest file](https://github.com/bluerobotics/BlueOS-Extensions-Repository/gh-pages/manifest.json) in the `gh-pages` branch
    
 #### Installed Extensions
-Once installed on the [Onboard Computer](@/integrations/hardware/required/onboard-computer/index.md), Extensions are stored at `/var/lib/docker` in the file-system, but should be managed through the BlueOS [Extensions Manager](../../advanced-usage/#extensions-manager).
+Once installed on the [Onboard Computer](@/integrations/hardware/required/onboard-computer/index.md), Extensions are stored at `/var/lib/docker` in the file-system, but should be managed through the BlueOS [Extensions Manager](../../usage/advanced/#extensions-manager).
 
 
 ### Ecosystem Attributes
@@ -380,7 +379,7 @@ Once installed on the [Onboard Computer](@/integrations/hardware/required/onboar
 
 If you're starting your Extension from scratch, there are a variety of development tools available within BlueOS and in existing Extensions which can enable implementing and testing your key functionality before you start to package it up for easy installation and sharing. Having the backend functionality tested before trying to package it into an Extension can help to minimise unexpected issues and troubleshooting.
 
-Basic functionality can be tested from within the core BlueOS Docker container using the provided [Terminal](../../advanced-usage/#terminal), and if you store files that you create in the `/usr/blueos/userdata/` directory they will be persistent across BlueOS restarts, and accessible through the [File Browser](../../advanced-usage/#file-browser). For a more interactive development experience, you may wish to use an Extension like [Jupyter](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/#:~:text=Jupyter,-Maintainer) or [VS Code](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/#:~:text=OpenVSCoder,-Maintainer).
+Basic functionality can be tested from within the core BlueOS Docker container using the provided [Terminal](../../usage/advanced/#terminal), and if you store files that you create in the `/usr/blueos/userdata/` directory they will be persistent across BlueOS restarts, and accessible through the [File Browser](../../usage/advanced/#file-browser). For a more interactive development experience, you may wish to use an Extension like [Jupyter](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/#:~:text=Jupyter,-Maintainer) or [VS Code](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/#:~:text=OpenVSCoder,-Maintainer).
 
 #### Extension Creation and Docker Image Upload
 
@@ -443,7 +442,7 @@ For reference:
 
 Testing each Extension release before making it available to install from the online store is strongly recommended. 
 
-1. Go to the [Extensions Manager](../../advanced-usage/#extensions-manager) in BlueOS
+1. Go to the [Extensions Manager](../../usage/advanced/#extensions-manager) in BlueOS
 1. Click on the "Installed" tab
 1. Click the "+" icon in the bottom right corner
 1. Enter the relevant information for your Docker Image, so it can be fetched from Docker Hub
@@ -464,7 +463,7 @@ Testing each Extension release before making it available to install from the on
 <!--
 ##### Accessing an Installed Extension's Docker Container
 
-It is possible to enter running Docker containers via the [Terminal](../../advanced-usage/#terminal), by 
+It is possible to enter running Docker containers via the [Terminal](../../usage/advanced/#terminal), by 
 
 1. Running `red-pill` to exit the BlueOS-core container
 1. Running `docker container ls` to list the currently running Docker containers
@@ -487,7 +486,7 @@ not recommended to upload commit-modified images as new Extension versions, beca
 
 {% note() %}
 If you want to make changes to files that are mounted to the computer's filesystem (via `binds` in the `permissions` metadata LABEL) then that can instead
-be done via the [File Browser](../../advanced-usage/#file-browser), restarting the Extension afterwards if necessary. In that case the changes will be
+be done via the [File Browser](../../usage/advanced/#file-browser), restarting the Extension afterwards if necessary. In that case the changes will be
 persistent once the modified file has been saved.
 {% end %}
 
@@ -511,7 +510,7 @@ persistent once the modified file has been saved.
 
 #### Installing from the Bazaar
 
-The Bazaar is available through the BlueOS [Extensions Manager](../../advanced-usage/#extensions-manager). Once an Extension has been accepted into the Bazaar it should appear automatically, within a few minutes.
+The Bazaar is available through the BlueOS [Extensions Manager](../../usage/advanced/#extensions-manager). Once an Extension has been accepted into the Bazaar it should appear automatically, within a few minutes.
 
 #### Iterating / Release Cycle
 

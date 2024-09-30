@@ -31,9 +31,9 @@ If you want to make use of that functionality you'll need a [DockerHub](https://
 BlueOS-bootstrap is a critical component of running BlueOS, and can significantly affect the system stability. It should only be updated when necessary, and preferably at times where the onboard computer hardware is accessible in case something goes wrong. For normal users it is strongly recommended to only update BlueOS-bootstrap to match stable releases of BlueOS, and even then only if there is a known issue an update is expected to fix or improve.
 {% end %}
 
-BlueOS-bootstrap versions are built at the same time as BlueOS-core versions, and they get bundled together in the Raspberry Pi images that can be flashed onto an SD card to install BlueOS onto it. For official BlueOS releases it is possible to update the BlueOS-bootstrap image to match the BlueOS release through the [BlueOS Version](../../advanced-usage#blueos-version) chooser, and is the recommended process.
+BlueOS-bootstrap versions are built at the same time as BlueOS-core versions, and they get bundled together in the Raspberry Pi images that can be flashed onto an SD card to install BlueOS onto it. For official BlueOS releases it is possible to update the BlueOS-bootstrap image to match the BlueOS release through the [BlueOS Version](../../usage/advanced/#blueos-version) chooser, and is the recommended process.
 
-Manually updating to a non-matched and/or custom bootstrap image requires using the [Terminal](../../advanced-usage#terminal):
+Manually updating to a non-matched and/or custom bootstrap image requires using the [Terminal](../../usage/advanced/#terminal):
 
 ```sh
 # drop down from blueos-core into the underlying operating system:

@@ -40,7 +40,7 @@ To understand how BlueOS is developed, it's valuable to understand what it's mad
 - Web interfaces and APIs
     - Core interface provides consistency, control, and displays active services
     - Services display links to API documentation → simplifies development
-    - [Extensions Manager](../../advanced-usage#extensions-manager) makes it easy to find, install, and manage services from others
+    - [Extensions Manager](../../usage/advanced/#extensions-manager) makes it easy to find, install, and manage services from others
         - Includes a web store, where Extensions can be downloaded from
 - Frontend (Vue.js, Typescript)
     - Allows for very reactive components (see heartbeats icon)
@@ -65,11 +65,11 @@ A Docker Container generally acts like an isolated mini operating system, but it
 
 ### Core
 
-[BlueOS-core](../core) is the body of BlueOS, and runs all of the built in [services](../../advanced-usage#available-services), along with the main web interface.
+[BlueOS-core](../core) is the body of BlueOS, and runs all of the built in [services](../../usage/advanced/#available-services), along with the main web interface.
 
 ### Extensions
 
-BlueOS has support for [Extensions](../extensions), which are handled by the [Extensions Manager](../../advanced-usage#extensions-manager) service in core.
+BlueOS has support for [Extensions](../extensions), which are handled by the [Extensions Manager](../../usage/advanced/#extensions-manager) service in core.
 
 Extensions are individual Docker images that run independently of BlueOS, but can hook into the core systems and host system, providing access to additional devices and data streams, as well as modifying / adding to the web interface.
 
