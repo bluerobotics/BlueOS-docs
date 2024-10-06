@@ -50,6 +50,7 @@ This covers a summary of the major changes and new features in BlueOS-1.2. Where
 ### [Extensions](../development/extensions/)
 - A standard folder for binding to the filesystem, accessible from the [File Browser](../advanced-usage/#file-browser)
 - Support for custom SVG icons
+- Support for disabling iframe embedding
 - Development process documentation
 - [BlueOS-Community GitHub organisation](https://github.com/orgs/BlueOS-community/repositories), including
    - Open-source extension examples

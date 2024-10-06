@@ -267,6 +267,8 @@ To do so requires the Extension to run a HTTP server[^1], at which it must serve
    - The official URL for the extension
 - `"api"`
    - The official URL for the extension's API
+- `"avoid_iframes"` (optional)
+   - Boolean (`true`/`false`) specifying whether to avoid embedding the extension interface in an iframe.
 - `"new_page"` (optional)
    - Boolean (`true`/`false`) specifying whether to open the extension in a new page instead of in a BlueOS frame
 
