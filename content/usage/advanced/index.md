@@ -335,11 +335,13 @@ installed) it's possible to easily roll back to a working version from
 {% end %}
 {{ service(service="File Browser", port=7777, link="https://github.com/filebrowser/filebrowser") }}
 {% pirate() %}
-
 The File Browser allows viewing, editing, downloading, and uploading BlueOS files.
-
 {% end %}
 {{ easy_image(src="file-browser", width=600, class="pirate") }}
+{% pirate() %}
+Vehicles using a Navigator flight controller board with a recent ArduPilot firmware can access Lua
+drivers and scripts at `configs/ardupilot/firmware/scripts`. `(New in 1.2)`
+{% end %}
 
 ### Log Browser
 {{ service(service="UAV LogViewer", link="https://ardupilot.org/copter/docs/common-uavlogviewer.html") }}
