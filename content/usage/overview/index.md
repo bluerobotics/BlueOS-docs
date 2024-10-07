@@ -58,18 +58,22 @@ This covers a summary of the major changes and new features in BlueOS-1.2. Where
    - Extension development quickstart/template repositories
 
 ### Page improvements
-- [Vehicle Setup](../advanced-usage/#vehicle-setup)
-   - Improved sensor status indicators
-   - COMING SOON: sensor calibrations, improved peripheral configuration
-- [Extensions Manager](../advanced-usage/#extensions-manager)
+- [Extensions Manager](../advanced/#extensions-manager)
    - Added disk usage display for installed extensions
-- [MAVLink Endpoints](../advanced-usage/#mavlink-endpoints)
-   - Added MAVP2P as an alternative MAVLink routing option
-- [File Browser](../advanced-usage/#file-browser)
+- [File Browser](../advanced/#file-browser)
    - New shortcuts to useful parts of the file-system
+   - Added support for Lua scripts for Navigator
+- [MAVLink Endpoints](../advanced/#mavlink-endpoints)
+   - Added MAVP2P as an alternative MAVLink routing option
+- [MAVLink Inspector](../advanced/#mavlink-inspector)
+   - Added nice summaries of pressure messages
+- [Vehicle Setup](../advanced/#vehicle-setup)
+   - Improved sensor status indicators
 
 ### Device/Hardware Support
 - Improved development support for devices without a default `pi` user, and that should have some services disabled on startup
+- Support added for the extended MAVLink [`MANUAL_CONTROL`](https://mavlink.io/en/services/manual_control.html) protocol, allowing
+  supporting autopilot firmwares (e.g. ArduSub >= 4.1.2) to receive full 6DOF control and up to 32 button signals from a joystick
 
 ## Feature Comparison
 
