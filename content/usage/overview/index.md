@@ -75,6 +75,9 @@ This covers a summary of the major changes and new features in BlueOS-1.2. Where
 - Support added for the extended MAVLink [`MANUAL_CONTROL`](https://mavlink.io/en/services/manual_control.html) protocol, allowing
   supporting autopilot firmwares (e.g. ArduSub >= 4.1.2) to receive full 6DOF control and up to 32 button signals from a joystick
 
+### [Data Privacy](../privacy)
+- Added anonymous telemetry for usage statistics
+
 ## Feature Comparison
 
 BlueOS has almost all features from the old Companion, and several hotly-requested new ones too!
