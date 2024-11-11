@@ -141,7 +141,9 @@ skull-and-crossbones icon
 {{ easy_image(src="system-status", width=250, center=true) }}
 
 - Heartbeat icon pulses with vehicle heartbeat, and goes red if heartbeat is lost
-- On click shows onboard computer temperature, voltage, and current usage
+   - On click shows onboard computer temperature, voltage, and current usage
+- GPS icon displays the number of visible satellites if a GPS is detected
+   - On click shows the current GPS position estimate, and some GPS health/status values
 - Additional warning icons appear if a problem is detected on the onboard computer:
    - High disk usage
    - CPU overheating
@@ -485,7 +487,7 @@ For making connections to the autopilot, see [MAVLink Endpoints](#mavlink-endpoi
      to avoid being disconnected
 - Bridges to internal programs can use the loopback IP `127.0.0.1`, which creates a
   local server
-- Allows setting a custom UDP port for a UDP client bridge to list to responses at
+- Allows setting a custom UDP port for a UDP client bridge to listen to responses at
 {% end %}
 {{ easy_image(src="serial-bridges-example", width=400, class="pirate", center=true) }}
 
