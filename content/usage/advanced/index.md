@@ -678,11 +678,14 @@ The Installed tab shows the resource usage of the installed extensions, and allo
 configuring them, checking their logs, and restarting or disabling them:
 {{ simple_pirate_image(src="extensions-installed", width=600) }}
 
+
+The blue "+" button in the bottom right corner allows installing custom extensions as relevant.
 {% pirate() %}
-Developers can install custom extensions as relevant.
+The "Edit" button on installed extension listings allows changing to alternative/development
+versions by setting the docker tag.
 {% end %}
 
-{{ easy_image(src="extensions-installed-example", width=400, class="pirate", center=true) }}
+{{ simple_pirate_image(src="extensions-installed-example", width=400) }}
 
 ## Interface Theme
 
