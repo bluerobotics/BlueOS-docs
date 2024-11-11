@@ -37,6 +37,8 @@ The [BlueOS Version](../../usage/advanced/#blueos-version) chooser can be used t
 1. [start-blueos-core](https://github.com/bluerobotics/BlueOS/tree/master/core/start-blueos-core) script that runs when the BlueOS-core container gets started
     - Responsible for configuring and starting the services
     - Supports disabling a comma-separated list of core services via the `BLUEOS_DISABLE_SERVICES` environment variable `(New in 1.2)`
+    - Limits service memory using cgroups `(New in 1.3)`
+        - Can be disabled using the `BLUEOS_DISABLE_MEMORY_LIMIT` environment variable
 1. [libs](https://github.com/bluerobotics/BlueOS/tree/master/core/libs) code libraries of shared functionality available to the service backends
 1. [services code](https://github.com/bluerobotics/BlueOS/tree/master/core/services) for running [the services](#services)
     - Mostly Python backend code, often wrapped around / making use of a program installed by `tools`
