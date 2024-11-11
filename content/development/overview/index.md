@@ -13,6 +13,14 @@ toc = true
 top = false
 +++
 
+## Governance and Rules
+
+### License
+The BlueOS codebase is dual-licensed under [AGPLv3](https://github.com/bluerobotics/BlueOS/blob/master/LICENSE-agplv3.md) and BlueOS Custom License (contact [software@bluerobotics.com](mailto:software@bluerobotics.com)).
+
+### Contributor Code of Conduct
+Developers of and contributors to BlueOS are expected to follow the [BlueOS Contributor Code of Conduct](https://github.com/bluerobotics/BlueOS/blob/master/CoC.md), violations of which may incur temporary or permanent bans from the project.
+
 ## Technology Stack
 
 ### Structure
