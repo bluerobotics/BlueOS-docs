@@ -1,3 +1,6 @@
 [submodule "themes/adidoks"]
 	path = themes/adidoks
 	url = https://github.com/ES-Alexander/adidoks.git
+[submodule "bluetheme"]
+	path = themes/bluetheme
+	url = https://github.com/BlueRobotics/bluetheme
