@@ -32,6 +32,9 @@ jobs:
       - name: Upload official docs
         if: ${{ github.event_name != 'pull_request' }}
         run: |
+          # Delete the old docs (if they exist)
+          aws s3 rm --recursive s3://br-www-docs/docs/${{ github.ref_name }}
+          # Upload the new ones
           aws s3 cp --recursive public s3://br-www-docs/docs/${{ github.ref_name }}
 
 #      - name: Upload proposal preview
