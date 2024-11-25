@@ -8,6 +8,7 @@ on:
   workflow_run:
     workflows: ["Sync Submodules"]
     types: [completed]
+    branches: ["1.0"]
 
 jobs:
   build:
