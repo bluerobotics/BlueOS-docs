@@ -5,10 +5,6 @@ on:
 #  pull_request:
 #    types: [opened, synchronize, reopened, closed]
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Sync Submodules"]
-    types: [completed]
-    branches: ["1.0"]
 
 jobs:
   build:
