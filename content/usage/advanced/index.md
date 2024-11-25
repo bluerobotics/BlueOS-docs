@@ -524,7 +524,7 @@ The Terminal provides
 - Direct access into the core BlueOS docker container
 - Ready access to the tmux sessions of the core services (`CTRL+b s`)
    - Useful for seeing logs as they update live
-   - Can kill services if necessary
+   - Can kill  (`CTRL+c`) services, and start them again (`↑ ⏎`)
 - Access to the underlying device via the `red-pill` utility
    - Can return to the core container using the `exit` command, or pressing `CTRL+d`
    - Can list available docker images (including extensions) with `docker image list`
