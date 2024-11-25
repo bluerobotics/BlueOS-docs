@@ -8,7 +8,6 @@ on:
   workflow_run:
     workflows: ["Sync Submodules"]
     types: [completed]
-    branches: ["latest"]
 
 jobs:
   build:
@@ -22,8 +21,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Check trigger source
+        run: |
+          echo "BRANCH=${{ github.event.workflow_run.head_branch || github.ref_name }}" >> $GITHUB_ENV
+
       - name: Check out code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BRANCH }}
 
       - name: Run Zola
         uses: shalzz/zola-deploy-action@v0.19.2
@@ -33,7 +38,7 @@ jobs:
       - name: Upload official docs
         if: ${{ github.event_name != 'pull_request' }}
         run: |
-          aws s3 cp --recursive public s3://br-www-docs/docs/${{ github.ref_name }}
+          aws s3 cp --recursive public s3://br-www-docs/docs/${{ env.BRANCH }}
 
 #      - name: Upload proposal preview
 #        if: ${{ github.event_name == 'pull_request' }}
