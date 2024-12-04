@@ -100,7 +100,8 @@ The theme is maintained in an external repository, and included in this one as a
 ### Automatic Generation on Pull Requests
 This repository includes continuous integration workflows that will build the documentation automatically in GitHub's servers, both for pull requests and updating the public documentation when new changes get accepted and merged in. This is particularly useful for contributors who don't want to install dependencies or download the repository source to their device, especially when only making small changes, or if you prefer to avoid using commandline tools.
 
-...
+If the build process succeeds, the proposed state of the documentation can be previewed at<br>
+`http://br-www-docs.s3-website-us-east-1.amazonaws.com/preview/blueos/<pull-request-number>`
 
 ### Local Setup
 If you frequently contribute to the documentation, you may wish to set things up on your local machine, so you can build and test changes offline and more quickly, and more easily perform complex version history management with git, before pushing the working and clean source back up to your GitHub remote to update your pull request.
