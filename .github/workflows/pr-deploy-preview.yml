@@ -37,7 +37,7 @@ jobs:
 
       - name: Retrieve PR Number
         run: |
-          echo "PR=$(cat pr/pr/NR)" >> $GITHUB_ENV
+          echo "PR=$(cat pr/NR)" >> $GITHUB_ENV
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -51,5 +51,5 @@ jobs:
           # Delete the files from the previous iteration of this PR (if they exist)
           aws s3 rm --recursive s3://br-www-docs/preview/blueos/${{ env.PR }}
           # Upload the new ones
-          aws s3 cp --recursive pr/public s3://br-www-docs/preview/blueos/${{ env.PR }}
+          aws s3 cp --recursive public s3://br-www-docs/preview/blueos/${{ env.PR }}
           echo "Preview at http://br-www-docs.s3-website-us-east-1.amazonaws.com/preview/blueos/${{ env.PR }}"
