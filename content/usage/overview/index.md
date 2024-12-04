@@ -14,7 +14,7 @@ toc = true
 top = false
 +++
 
-## A bit of context...
+## IT WORKS!!!
 
 The [original Companion Software](https://www.ardusub.com/reference/companion-web-ui.html) project (started in 2015) was originally created with the simple intent to route an underwater vehicle's video stream and communications to the surface computer, and provide some basic configuration of those features and the vehicle firmware. The simple scope was great to get things started, but also meant that new and complex features weren't designed in from the start, so maintenance and developing functionality became increasingly challenging.
 
