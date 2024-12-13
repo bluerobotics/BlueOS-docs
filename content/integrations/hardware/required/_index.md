@@ -6,4 +6,6 @@ sort_by = "weight"
 weight = 1
 draft = false
 insert_anchor_links = "left"
+
+redirect_to = "integrations/hardware/required/flight-controller"
 +++
