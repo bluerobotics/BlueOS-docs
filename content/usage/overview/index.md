@@ -14,6 +14,9 @@ toc = true
 top = false
 +++
 
+{{ easy_image(src="blueos-banner", width=460, center="true") }}
+{{ easy_image(src="interface-highlight", width=650, center="true") }}
+
 ## A bit of context...
 
 The [original Companion Software](https://www.ardusub.com/reference/companion-web-ui.html) project (started in 2015) was originally created with the simple intent to route an underwater vehicle's video stream and communications to the surface computer, and provide some basic configuration of those features and the vehicle firmware. The simple scope was great to get things started, but also meant that new and complex features weren't designed in from the start, so maintenance and developing functionality became increasingly challenging.
@@ -22,7 +25,16 @@ With lessons learned on useful features and software architecture requirements, 
 
 We're super excited about our future with BlueOS, and we can't wait for you to join us and try it out! 😄
 
-## BlueOS principles and goals
+## What's in a BlueOS vehicle?
+
+BlueOS is designed to integrate nicely with connected parts of the hardware and software stack involved in running and operating a vehicle.
+
+In general, BlueOS (and its extensions) run on an [onboard computer](@/integrations/hardware/required/onboard-computer/index.md), and help an underlying autopilot (on a [flight controller board](@/integrations/hardware/required/flight-controller/index.md)) to communicate with an operator (via a [control station computer](@/integrations/hardware/required/control-computer/index.md)), while also interfacing with and passing on data from sensors that do not provide direct measurements of the vehicle's control state.
+
+Here is a visual overview of common components in a BlueOS-related software stack:
+{{ easy_image(src="stack", width=600, center="true") }}
+
+## Project principles and goals
 
 As the core development team we've tried to envision the future of the onboard computer, and the features that will require. Our initial ideas have been distilled into the following core concepts, many of which are already built in to the BlueOS of today:
 
@@ -118,6 +130,6 @@ It's worth noting that the [Version Chooser](../advanced/#blueos-version) in gen
 
 ## Quick links
 
-1. [Documentation](../)
+1. [Documentation](@/_index.md)
 2. [Source code](https://github.com/bluerobotics/BlueOS)
 3. [Releases, changelogs, files](https://github.com/bluerobotics/BlueOS/releases)
