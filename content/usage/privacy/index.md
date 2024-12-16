@@ -33,7 +33,7 @@ As open source software, BlueOS can be freely independently reviewed and audited
 | --- | --- | --- | --- |
 | [Internet connectivity check](https://github.com/bluerobotics/BlueOS/blob/master/core/services/helper/main.py#L70) | telemetry.blueos.cloud | - IP address<br>- hardware identifier<br>- BlueOS version | - aggregate rough [distribution of recently active vehicles](https://blueos.cloud/), using [GeoIP](https://arxiv.org/pdf/2109.13665)<br>- estimating proportions of onboard computer types and flight controller boards<br>- estimating proportions of in-use BlueOS versions |
 | Internet connectivity check | - firmware.ardupilot.org<br>- amazon.com<br>- github.com<br>- 1.1.1.1 (Cloudflare) | IP address | availability of autopilot, BlueOS, and Extension updates, and the internet speed test service |
-| [Error statistics and tracebacks](https://github.com/bluerobotics/BlueOS/blob/master/core/frontend/src/main.ts) | sentry.io | - IP address<br>- Error tracebacks | - tracking error rates and reasons<br>- samples removed after 90 days
+| [Error statistics and tracebacks](https://github.com/bluerobotics/BlueOS/blob/master/core/frontend/src/main.ts) | sentry.io | - IP address<br>- Error tracebacks | - tracking error rates and reasons<br>- samples removed after 90 days<br>- collection limited to tagged releases of BlueOS (e.g. not development branches) |
 {% end %}
 
 ### User-Generated Events
