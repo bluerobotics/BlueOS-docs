@@ -87,6 +87,7 @@ This covers a summary of the major changes and new features in BlueOS-1.3. Where
 
 BlueOS has almost all features from the old Companion, and several hotly-requested new ones too!
 
+{% horizontal_scroll(width="1000px") %}
 | Feature | BlueOS 1.3 | BlueOS 1.2 | BlueOS 1.1 | BlueOS 1.0 | Companion |
 |---|---|---|---|---|---|
 | [**Onboard Computer**](@/integrations/hardware/required/onboard-computer/index.md) | &rarr;<br>+ Raspberry Pi CM4 | &rarr; | &rarr;<br>+ Other Linux-based SBCs images to come | + Raspberry Pi 3B / 3B+ / 4B supported<br>+ You can install from scratch using the installation script in any Linux computer. (Modifications may be necessary for your hardware configuration) | Raspberry Pi 3B required |
@@ -110,6 +111,7 @@ BlueOS has almost all features from the old Companion, and several hotly-request
 | [**Serial Bridges**](../advanced/#serial-bridges) | &rarr;<br>+ Separate target and listener ports | &rarr; | &rarr; | &rarr; | Create and manage bridges between serial and UDP/TCP endpoints |
 | **Water Linked** | &rarr; | &rarr; | DVL-A50 and UGPS extensions available through Extensions Manager | [DVL-A50 package available](https://discuss.bluerobotics.com/t/external-integrations-extensions/10912#integration-example-dvl-5) | Supports UGPS and DVL-A50 |
 | [**Extensions**](../extensions/) | &rarr; | &rarr; | Custom extensions available through Extensions Manager | &rarr; | Custom functionality requires forking the codebase |
+{% end %}
 
 ## Release Types
 BlueOS has multiple release types, to allow choosing your preferred balance between access to the latest fixes and improvements, and stability of the software. The three release types are:
