@@ -375,8 +375,21 @@ endpoints for MAVLink-based services and programs to access.
 {% end %}
 {{ easy_image(src="mavlink-endpoints", width=600, class="pirate") }}
 {% pirate() %}
-- It is possible to switch from the default MAVLinkRouter to MAVP2P `(New in 1.2)`
-   - This may use more CPU, so is only recommended if your system is having frequent "GCS Heartbeat Lost" errors
+- The default MAVLinkRouter can be switched to instead use:
+   - [MAVP2P](https://github.com/bluenviron/mavp2p) `(New in 1.2)`
+      - This may use more CPU, so is only recommended if your system is having frequent "GCS Heartbeat Lost" errors
+      - Does not yet support generating telemetry log files
+   - [MAVLinkServer](https://github.com/bluerobotics/mavlink-server) `(New in 1.4)`
+      - All messages are forwarded to all clients (does not attempt to filter by component/target IDs)
+         - Endpoints do not have behavioural differences (e.g. UDP vs TCP, client vs server)
+      - Allows websocket and cross-websocket communication, with a 
+        [MAVLink2REST](https://github.com/mavlink/mavlink2rest?tab=readme-ov-file#api)-compatible API
+      - Logs all messages passed through, instead of just those from the vehicle
+         - Logs can be visualised and downloaded through the [Log Browser](#log-browser)
+      - Provides a detailed debugging interface (accessed via [Available Services](#available-services)):
+{% end %}
+{{ easy_image(src="mavlink-server", width=550, class="pirate") }}
+{% pirate() %}
 - Endpoints intended for internal BlueOS operations are configured to the
 loopback IP `127.0.0.1`
 - Server endpoints for external use are configured to the localhost IP
@@ -386,7 +399,7 @@ loopback IP `127.0.0.1`
    - e.g. `192.168.2.1` for connecting to a UDP server on the [Control Station Computer](@/integrations/hardware/required/control-computer/index.md)
 - Client endpoints seem to operate more stably than server ones
 - Unprotected endpoints can be removed or disabled
-- Modifying an endpoint is not possible - a new one must be created instead
+- New endpoints can be created, or existing unprotected ones can be modified
    - e.g. some users may wish to set up a UDP endpoint for connecting to with
    Pymavlink from the surface:
 {% end %}
@@ -395,7 +408,7 @@ loopback IP `127.0.0.1`
 {% pirate() %}
 ### MAVLink Inspector
 {% end %}
-{{ service(service="MAVLink2Rest", port=6040, link="https://github.com/patrickelectric/mavlink2rest") }}
+{{ service(service="MAVLink2Rest", port=6040, link="https://github.com/mavlink/mavlink2rest") }}
 {% pirate() %}
 
 The MAVLink Inspector provides real-time access to the MAVLink messages being
