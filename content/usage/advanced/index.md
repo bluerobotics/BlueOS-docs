@@ -145,6 +145,9 @@ skull-and-crossbones icon
    - On click shows onboard computer temperature, voltage, and current usage
 - GPS icon displays the number of visible satellites if a GPS is detected
    - On click shows the current GPS position estimate, and some GPS health/status values
+   - Can show status for two connected GPS systems, and GPS-based yaw if both have valid position fixes `(New in 1.4)`
+{{ easy_image(src="gps-status", width=300, center=true) }}
+
 - Additional warning icons appear if a problem is detected on the onboard computer:
    - High disk usage
    - CPU overheating
