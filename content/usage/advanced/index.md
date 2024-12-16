@@ -616,6 +616,9 @@ including failsafes, and reverting parameters to their defaults.
 
 {{ easy_image(src="vehicle-setup-configure-failsafes", width=600) }}
 
+`New in 1.4`
+{{ easy_image(src="vehicle-setup-configure-gimbal", width=600) }}
+
 ### Video Streams
 {{ service(service="MAVLink Camera Manager", link="https://github.com/bluerobotics/mavlink-camera-manager/", port=6020) }}
 
