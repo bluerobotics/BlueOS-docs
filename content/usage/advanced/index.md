@@ -76,6 +76,7 @@ For each interface, choose between:
 - A static IP
 - A dynamic IP
 - A DHCP server
+   - Serves the lease range 101-200 `(New in 1.4)`
 
 It is possible to have multiple connections per interface type.
 
