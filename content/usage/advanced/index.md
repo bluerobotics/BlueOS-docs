@@ -288,6 +288,10 @@ autopilot.
 The Autopilot Parameters page allows checking and changing the autopilot's configuration.
 
 - Includes fuzzy searching of names and descriptions, to help find relevant parameters
+- Parameter descriptions can be overridden by including a `metatdata_override.json` file
+in the `userdata` folder in the [File Browser](#file-browser) `(New in 1.4)`
+   - Parameter files can be generated from an ArduPilot firmware using 
+     [this tool](https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/param_metadata/param_parse.py)
 - Allows loading parameters from a file, and saving the current parameters to a file
 
 {{ easy_image(src="parameters" width=600) }}
