@@ -55,9 +55,10 @@ right clicking and selecting the desired widgets to display. Widgets can be reor
 by clicking and dragging.
 
 There are currently widgets available for displaying the CPU and Disk (storage) usage
-as percentages, which are periodically updated during operation.
+as percentages, as well as local network usage, which are periodically updated during
+operation.
 
-{{ easy_image(src="widgets", width=300) }}
+{{ easy_image(src="widgets", width=350) }}
 
 ---
 
