@@ -42,6 +42,14 @@ For clarity of this documentation, any pages that are extended by (or only avail
 in) Pirate Mode are shown in [dark mode](#display-mode-management), and described
 with grey text.
 
+### Safe Mode
+
+Operating a vehicle involves some risks to both the vehicle and the operator. When
+BlueOS detects that the vehicle is armed it engages safe mode, which requires explicit
+confirmation to access functionality like BlueOS and autopilot firmware updates.
+
+{{ easy_image(src="safe-mode", width="400") }} 
+
 ### Interface Overview
 {{ service(service="blueos-frontend", port=80) }}
 
@@ -56,9 +64,13 @@ by clicking and dragging.
 
 There are currently widgets available for displaying the CPU and Disk (storage) usage
 as percentages, as well as local network usage, which are periodically updated during
-operation.
+operation:
 
 {{ easy_image(src="widgets", width=350) }}
+
+There is also a prominent indicator when the vehicle is in [Safe Mode](#safe-mode):
+
+{{ easy_image(src="safe-mode-widget", width=100) }}
 
 ---
 
