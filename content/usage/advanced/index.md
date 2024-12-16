@@ -628,8 +628,8 @@ including failsafes, and reverting parameters to their defaults.
 
 - BlueOS automatically detects H264-encoded video streams
 {% pirate() %}
-   - MJPG and YUYV encoded streams are also detected in pirate mode,
-   but currently only work when configured as RTSP streams
+- MJPG and YUYV encoded streams are also detected in pirate mode, but currently only work when configured as RTSP streams
+- H265 encoded streams can be streamed, using RTSP or UDP265 `(New in 1.4)`
 {% end %}
 
 - The first time BlueOS starts up it will auto-configure any cameras that are 
