@@ -205,6 +205,10 @@ Submit feedback about BlueOS via:
 - [Issues on the GitHub repository](https://github.com/bluerobotics/BlueOS/issues)
    - allows easily tracking changes, 
 and notification when complete/fixed
+- Report form submissions
+   - Can be submitted at any time, and get sent to the developers when the
+     [control station computer](@/integrations/hardware/required/control-computer/index.md)
+     next connects to the internet
 - Posts on [the Blue Robotics forum](https://discuss.bluerobotics.com)
    - allows easy discussion with the community
 
