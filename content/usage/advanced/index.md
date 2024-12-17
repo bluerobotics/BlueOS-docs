@@ -11,7 +11,7 @@ draft = false
 lead = ''
 toc = true
 top = false
-link_base = "https://github.com/bluerobotics/BlueOS/tree/1.3/core"
+link_base = "https://github.com/bluerobotics/BlueOS/tree/master/core"
 +++
 
 ## General Information
