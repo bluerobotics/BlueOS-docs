@@ -788,7 +788,7 @@ together with the theme file that created it:
 
 {% end %}
 
-{{ easy_image(src="theme-style", width=600, class="pirate") }}
+{{ easy_image(src="theme-style-main", width=600, class="pirate") }}
 
 {% pirate() %}
 ```css
@@ -796,7 +796,7 @@ together with the theme file that created it:
   --v-primary-base: #CAB1E5 !important;  /* sidebar highlights, submit buttons */
   --v-info-base: #BA55E5 !important;     /* info boxes (often same as primary base) */
   --v-warning-base: #EDD1E5 !important;  /* warnings and skip buttons */
-  --v-error-base: #AC1D1C !important;    /* notifications, pirate icons, cancel/delete buttons */
+  --v-error-base: #AC1D1C !important;    /* notifications, pirate icons, negative buttons */
   --v-anchor-base: #5A11ED !important;   /* hyperlinks */
 }
 
@@ -826,6 +826,24 @@ header.dark-background-glass {
   background-image: linear-gradient(160deg, #5111CA88 0%, #0B5E5588 100%) !important;
   backdrop-filter: blur(4.5px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
+}
+```
+
+The explanatory diagram colours are also configurable `(New in 1.4)`:
+{% end %}
+
+{{ easy_image(src="theme-style-diagrams", width=600, class="pirate") }}
+
+{% pirate() %}
+```css
+:root {
+    --v-water-base: #AC2317 !important;
+    --v-negative-base: #891A10 !important;
+    --v-attention-base: #ECC19B !important;
+    --v-positive-base: #514A3B !important;
+    --v-neutral-base: #A15447 !important;
+    --v-detail-base: #370502 !important;
+    --v-outline-base: #FDF4C9 !important;
 }
 ```
 {% end %}
