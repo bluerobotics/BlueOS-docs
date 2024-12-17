@@ -50,38 +50,36 @@ As the core development team we've tried to envision the future of the onboard c
 
 Some of these principles will only be evident in future releases, but the underlying software architecture and organization have been designed from the ground up to support and enable them.
 
-## What's New in BlueOS-1.3?
+## What's New in BlueOS-1.4?
 
-This covers a summary of the major changes and new features in BlueOS-1.3. Where applicable relevant features are also included in the [feature comparison table](#feature-comparison). For detailed coverage of every change, please see the [full release notes](https://github.com/bluerobotics/BlueOS-docker/releases).
+This covers a summary of the major changes and new features in BlueOS-1.4. Where applicable relevant features are also included in the [feature comparison table](#feature-comparison). For detailed coverage of every change, please see the [full release notes](https://github.com/bluerobotics/BlueOS-docker/releases).
 
-### [Extensions](../../development/extensions/)
-- Added support for extensions that are installed by default with BlueOS
+### Safety
+- Added [Safe Mode](../advanced/#safe-mode), to avoid accidentally performing unsafe configuration while the vehicle is armed
+
+### [Extensions](@/development/extensions/index.md)
+- Improved [`register_service` specification](@/development/extensions/index.md#web-interface-http-server) to better support cross-communication between extensions, and remote access of extension interfaces
 
 ### Header Bar
-- Added GPS status indicator
+- Added [network usage widget](../advanced/#header-indicators-and-blueos-configuration)
+- Added [second GPS status indicator, and GPS yaw support](../advanced/#system-status)
 
 ### Page improvements
-- [Extensions Manager](../advanced/#extensions-manager)
-   - General interface improvements
-- [Serial Bridges](../advanced/#serial-bridges)
-   - Splits UDP port handling into separate target and listener ports
+- [Autopilot Parameters](../advanced/#autopilot-parameters)
+   - Added parameter description override functionality, for custom parameter support
+- [MAVLink Endpoints](../advanced/#mavlink-endpoints)
+   - Added MAVLink Server as a routing alternative, with all-endpoint logging and a detailed debugging interface
 - [Vehicle Setup](../advanced/#vehicle-setup)
-   - Load recommended parameter sets
-   - Added motor reversal configuration interface
-   - Added sensor calibration functionalities
-   - Added intuitive failsafe configuration options
+   - Added camera mount configuration options
+   - Added GPS yaw to the compass page (when available)
 - [Video Streams](../advanced/#video-streams)
-   - More RTSP options
+   - Added support for H265-encoded video streams
 
 ### Device/Hardware Support
-- Added support for the Raspberry Pi Compute Module 4
-- Added support for external wifi adapters
+- Added support for running the Navigator [flight controller](@/integrations/hardware/required/flight-controller/index.md) with 64-bit operating systems
 
 ### [Data Privacy](../privacy/)
-- Added Sentry telemetry for error logs
-
-### [Contributors](../../development/overview/)
-- Added [Contributor Code of Conduct](https://github.com/bluerobotics/BlueOS/blob/master/CoC.md)
+- Added Sentry reports for user-generated feedback
 
 ## Feature Comparison
 
