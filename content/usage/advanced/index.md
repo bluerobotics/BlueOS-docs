@@ -311,7 +311,7 @@ and where relevant
 - its API documentation (in a live-testable form)
 - the current API version
 
-The individual services are documented [in the development documentation](../development/core/#services).
+The individual services are documented [in the development documentation](@/development/core/index.md#services).
 {% end %}
 {{ easy_image(src="available-services", width=600, class="pirate") }}
 
