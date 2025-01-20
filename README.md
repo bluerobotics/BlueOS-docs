@@ -1,6 +1,8 @@
 # Overview
 
-This repository documents the Blue Robotics' [BlueOS](https://blueos.cloud) software.
+This repository documents the Blue Robotics' [BlueOS](https://blueos.cloud) software:
+
+[![docs-preview](docs-preview.png)](https://blueos.cloud/docs/)
 
 The documentation is generated using the [Zola](https://www.getzola.org/) static site generator, together with [BlueTheme](https://github.com/bluerobotics/bluetheme).
 
