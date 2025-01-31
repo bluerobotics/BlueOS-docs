@@ -282,6 +282,11 @@ autopilot.
 
 {{ easy_image(src="firmware-serial", class="pirate", width=600) }}
 
+{% note() %}
+It's highly recommended to **flash the default parameters** for the vehicle when a **firmware downgrade or upgrade** is done.
+Check the [vehicle setup](#vehicle-setup) for more information.
+{% end %}
+
 ### Autopilot Parameters
 `New in 1.1`
 
