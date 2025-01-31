@@ -23,6 +23,6 @@ ArduSub supports both simple servo-driven (PWM) gimbals in which the autopilot's
 
 The following gimbals are supported in ArduSub:
 * [Servo Gimbals](https://bluerobotics.com/store/sensors-sonars-cameras/cameras/camera-tilt-mount/)
-* [Gremsy Pixy U](https://ardupilot.org/copter/docs/common-gremsy-pixyu-gimbal.html#common-gremsy-pixyu-gimbal) 
+* [Gremsy Pixy U](https://ardupilot.org/copter/docs/common-gremsy-pixyu-gimbal.html#common-gremsy-pixyu-gimbal)
 * [SimpleBGC (aka AlexMos) Gimbal Controller](https://ardupilot.org/copter/docs/common-simplebgc-gimbal.html#common-simplebgc-gimbal)
 * [SToRM32 Gimbal Controller](https://ardupilot.org/copter/docs/common-storm32-gimbal.html#common-storm32-gimbal) (communicates with MAVLink)

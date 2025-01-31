@@ -41,7 +41,7 @@ There is a comparison [in the Blue Robotics Technical Reference](https://bluerob
 
 With feedback from other users, the following flight controller boards are not recommended for use with Ardusub:
 
-1. [RadioLink Pixhawk](https://www.foxtechfpv.com/pixhawk-autopilot-combo.html) 
+1. [RadioLink Pixhawk](https://www.foxtechfpv.com/pixhawk-autopilot-combo.html)
     * Issues: Proprietary firmware binaries, only works with RadioLink version of Mission Planner, incorrect connectors.
 1. Any flight controller with [Picoblade](https://www.molex.com/molex/products/family/picoblade) series connectors instead of [JST-GH](https://bluerobotics.com/learn/wl-connector-standard/#jst-gh-series) or [DF13](https://bluerobotics.com/learn/wl-connector-standard/#hirose-df13-series-not-recommended-for-new-designs) connectors.
     * Issue: Is not connector compatible with Blue Robotics products.
@@ -50,4 +50,4 @@ With feedback from other users, the following flight controller boards are not r
 
 ArduPilot has has a list of other compatible flight controllers: [Autopilot Hardware Options](https://ardupilot.org/copter/docs/common-autopilots.html)
 
-These boards have not been tested or reported to work with ArduSub. 
+These boards have not been tested or reported to work with ArduSub.

@@ -50,7 +50,7 @@ If a power over tether solution is required, then Blue Robotics sells the [Outla
 
 ## Voltage Regulators
 
-Depending on the electronics used, the primary voltage of the vehicle will most likely need to be stepped down and regulated more more sensitive electronics such as Companion Computers and autopilots. 
+Depending on the electronics used, the primary voltage of the vehicle will most likely need to be stepped down and regulated more more sensitive electronics such as Companion Computers and autopilots.
 
 The following regulators have been tested to provide adequate power:
 

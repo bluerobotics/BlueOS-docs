@@ -24,7 +24,7 @@ The following power sensing modules have been tested and recommended for use:
     * Does not provide power to the autopilot, voltage and current sensing only.
 * [Mauch HS Series Power Module](https://www.mauch-electronic.com/hs-sensor-product)
     * Requires an additional [4-14S Hybrid BEC](https://www.mauch-electronic.com/4-14s-hyb-bec) to power the board.
-    
+
 ## Not Recommended Power Sensing Modules
 
 The following modules have been tested and are **not** recommended for use:
