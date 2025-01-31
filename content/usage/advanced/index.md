@@ -23,7 +23,7 @@ features see the [Overview](../overview/#feature-comparison) instead.
 ### Pirate Mode
 
 The default BlueOS interface is simplified, and shows only the major tools that
-most people are likely to find useful. Full functionality is available via 
+most people are likely to find useful. Full functionality is available via
 "Pirate Mode", which can be enabled from the [header bar](#display-mode-management).
 Note that Pirate Mode is advanced/development mode, and should be used with care.
 
@@ -48,7 +48,7 @@ Operating a vehicle involves some risks to both the vehicle and the operator. Wh
 BlueOS detects that the vehicle is armed it engages safe mode, which requires explicit
 confirmation to access functionality like BlueOS and autopilot firmware updates.
 
-{{ easy_image(src="safe-mode", width="400") }} 
+{{ easy_image(src="safe-mode", width="400") }}
 
 ### Interface Overview
 {{ service(service="blueos-frontend", port=80) }}
@@ -101,7 +101,7 @@ It is possible to have multiple connections per interface type.
 {{ service(service="Wifi Manager", port=9000, link="/services/wifi", based=true) }}
 
 - Choose a wifi network to connect to
-   - The BlueOS web interface is accessible via 
+   - The BlueOS web interface is accessible via
    [http://blueos-wifi.local](http://blueos-wifi.local) when
    connected to the same wifi network as your device (including a mobile phone)
 
@@ -116,7 +116,7 @@ easily connect to it from a phone
    - The hotspot SSID is named `BlueOS (******)` by default, where the asterisk
    field varies for each system
       - The default password for the hotspot is `blueosap`
-   - The BlueOS web interface is accessible via 
+   - The BlueOS web interface is accessible via
    [http://blueos-hotspot.local](http://blueos-hotspot.local) and
    [http://192.168.42.1](http://192.168.42.1) when your device is connected to
    the BlueOS hotspot network
@@ -220,7 +220,7 @@ specifies the requirements for a service page to appear in the sidebar
 
 Submit feedback about BlueOS via:
 - [Issues on the GitHub repository](https://github.com/bluerobotics/BlueOS/issues)
-   - allows easily tracking changes, 
+   - allows easily tracking changes,
 and notification when complete/fixed
 - Report form submissions
    - Can be submitted at any time, and get sent to the developers when the
@@ -245,7 +245,7 @@ Pages are sorted alphabetically.
 The Autopilot Firmware page provides basic information about the active
 autopilot, along with options to:
 {% pirate() %}
-- Change board (select a connected board, or run an 
+- Change board (select a connected board, or run an
 [SITL](https://www.ardusub.com/developers/sitl.html) simulation)
 - Start the autopilot
 - Stop the autopilot
@@ -273,7 +273,7 @@ autopilot, along with options to:
 {{ simple_pirate_image(src="firmware", width=600) }}
 
 {% pirate() %}
-Systems with a 
+Systems with a
 [Navigator](https://bluerobotics.com/store/comm-control-power/control/navigator/)
 flight controller also have the option to configure serial-compatible ports from
 the onboard computer (including USB ports) as serial ports accessible to the
@@ -290,7 +290,7 @@ The Autopilot Parameters page allows checking and changing the autopilot's confi
 - Includes fuzzy searching of names and descriptions, to help find relevant parameters
 - Parameter descriptions can be overridden by including a `metatdata_override.json` file
 in the `userdata` folder in the [File Browser](#file-browser) `(New in 1.4)`
-   - Parameter files can be generated from an ArduPilot firmware using 
+   - Parameter files can be generated from an ArduPilot firmware using
      [this tool](https://github.com/ArduPilot/ardupilot/blob/master/Tools/autotest/param_metadata/param_parse.py)
 - Allows loading parameters from a file, and saving the current parameters to a file
 
@@ -301,10 +301,10 @@ in the `userdata` folder in the [File Browser](#file-browser) `(New in 1.4)`
 
 The Available Services page provides developer access to the underlying http
 server interfaces of the services upon which BlueOS is based. Each service is
-listed with 
+listed with
 - the port it is served at
 - a meaningful name
-- a web-page link using the active 
+- a web-page link using the active
 [network configuration](../getting-started/#interface-access)
 
 and where relevant
@@ -403,7 +403,7 @@ endpoints for MAVLink-based services and programs to access.
    - [MAVLinkServer](https://github.com/bluerobotics/mavlink-server) `(New in 1.4)`
       - All messages are forwarded to all clients (does not attempt to filter by component/target IDs)
          - Endpoints do not have behavioural differences (e.g. UDP vs TCP, client vs server)
-      - Allows websocket and cross-websocket communication, with a 
+      - Allows websocket and cross-websocket communication, with a
         [MAVLink2REST](https://github.com/mavlink/mavlink2rest?tab=readme-ov-file#api)-compatible API
       - Logs all messages passed through, instead of just those from the vehicle
          - Logs can be visualised and downloaded through the [Log Browser](#log-browser)
@@ -458,7 +458,7 @@ A plot is provided of each test, to help diagnose intermittent issues.
 
 {{ easy_image(src="network-test-local", width=350) }}
 
-The Internet Speed Test allows measuring the latency and upload and download 
+The Internet Speed Test allows measuring the latency and upload and download
 speeds between BlueOS and its internet connection (if one is available).
 
 {{ easy_image(src="network-test-internet", width=350) }}
@@ -483,10 +483,10 @@ for the component that will send the location data to the vehicle
 
 `New in 1.1`
 
-The Ping Sonar Devices page shows any detected 
+The Ping Sonar Devices page shows any detected
 [sonars](@/integrations/hardware/additional/sonars/index.md) from the Ping family,
 including [ethernet-configured Ping360s](https://bluerobotics.com/learn/changing-communications-interface-on-the-ping360/#wiring-connections--ethernet-configuration)
-that are visible on the local network (e.g. via an 
+that are visible on the local network (e.g. via an
 [Ethernet Switch](@/integrations/hardware/additional/ethernet-switch/index.md)).
 
 - Allows configuring Ping Sonar distance estimates to send as MAVLink
@@ -494,7 +494,7 @@ that are visible on the local network (e.g. via an
 messages to the autopilot, for viewing in the Control Station Software and
 logging as part of the telemetry stream
 - Provides a viewing utility for devices connected via USB/serial, to show
-which port they are plugged into 
+which port they are plugged into
 
 {{ easy_image(src="ping-sonar-devices", width=600) }}
 
@@ -505,7 +505,7 @@ which port they are plugged into
 {% pirate() %}
 
 The Serial Bridges page allows creating high performance links between serial
-devices that are connected to the onboard computer, to a UDP port. 
+devices that are connected to the onboard computer, to a UDP port.
 
 Replaces the [Routing](https://www.ardusub.com/reference/companion/routing.html)
 functionality from the old Companion Software.
@@ -590,7 +590,7 @@ file at `userdata/modeloverrides/<vehicle_type>/<vehicle_frame>.glb` (e.g.
 Documentation for the recommended process for creating a `.glb` file from a vehicle
 model is coming soon.
 
-In future this page will also allow 
+In future this page will also allow
 - using custom highlighting logic for model components
 - displaying device statuses from extensions
 {% end %}
@@ -632,7 +632,7 @@ including failsafes, and reverting parameters to their defaults.
 - H265 encoded streams can be streamed, using RTSP or UDP265 `(New in 1.4)`
 {% end %}
 
-- The first time BlueOS starts up it will auto-configure any cameras that are 
+- The first time BlueOS starts up it will auto-configure any cameras that are
 connected at that time, with UDP streams counting up from port `5600`
    - e.g. a second camera at first startup would be streamed to port `5601`
    - Auto-configuration also occurs if the settings are reset
@@ -865,7 +865,7 @@ The explanatory diagram colours are also configurable `(New in 1.4)`:
         [].forEach.call(document.querySelectorAll(hide), function(el) {
             el.style.display = 'none';
         });
-        document.getElementById("pirate_toggle").textContent = 
+        document.getElementById("pirate_toggle").textContent =
             buttonPrefix+" advanced functionality";
     }
 </script>

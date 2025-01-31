@@ -41,7 +41,7 @@ As open source software, BlueOS can be freely independently reviewed and audited
 {% horizontal_scroll(width="790px") %}
 | Service | Domain | Data | Usage |
 | --- | --- | --- | --- |
-| [Feedback/Bug Reports](https://github.com/bluerobotics/BlueOS/blob/master/core/frontend/src/components/app/ReportMenu.vue) | sentry.io | - IP address<br>- name (optional)<br>- email (optional) | - direct user feedback mechanism<br>- reporter details useful to follow up with requests for additional information and/or to inform when an issue is resolved | 
+| [Feedback/Bug Reports](https://github.com/bluerobotics/BlueOS/blob/master/core/frontend/src/components/app/ReportMenu.vue) | sentry.io | - IP address<br>- name (optional)<br>- email (optional) | - direct user feedback mechanism<br>- reporter details useful to follow up with requests for additional information and/or to inform when an issue is resolved |
 {% end %}
 
 ## Privacy Protections

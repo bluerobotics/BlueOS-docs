@@ -21,7 +21,7 @@ top = false
 
 The [original Companion Software](https://www.ardusub.com/reference/companion-web-ui.html) project (started in 2015) was originally created with the simple intent to route an underwater vehicle's video stream and communications to the surface computer, and provide some basic configuration of those features and the vehicle firmware. The simple scope was great to get things started, but also meant that new and complex features weren't designed in from the start, so maintenance and developing functionality became increasingly challenging.
 
-With lessons learned on useful features and software architecture requirements, BlueOS was designed and created from the ground up to fit the requirements of the onboard computer system we _want_ to have - with room to grow into a true operating system for the vehicle. BlueOS is modular to the heart, which makes it portable, robust to update, and extensible. 
+With lessons learned on useful features and software architecture requirements, BlueOS was designed and created from the ground up to fit the requirements of the onboard computer system we _want_ to have - with room to grow into a true operating system for the vehicle. BlueOS is modular to the heart, which makes it portable, robust to update, and extensible.
 
 We're super excited about our future with BlueOS, and we can't wait for you to join us and try it out! 😄
 

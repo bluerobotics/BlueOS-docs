@@ -35,7 +35,7 @@ The web interface monitors the autopilot and other main software components. It 
 
 ### Wizard
 
-When BlueOS is newly installed the interface provides a configuration wizard to help get things set up. 
+When BlueOS is newly installed the interface provides a configuration wizard to help get things set up.
 
 The Welcome section allows skipping the wizard if BlueOS and your vehicle have already been configured as desired:
 {{ easy_image(src="wizard-welcome", width=500, center=true) }}
@@ -96,7 +96,7 @@ Internet connectivity is possible via either [wifi](#connect-wifi) or [passed th
 - [Ubuntu (Linux) instructions](https://unix.stackexchange.com/questions/575178/sharing-wifi-internet-through-ethernet-interface)
 - [Arch (Linux) instructions](https://wiki.archlinux.org/title/Internet_sharing)
 
-Once the internet passthrough has been configured, the BlueOS header should 
+Once the internet passthrough has been configured, the BlueOS header should
 [show that it has internet connectivity](../advanced/#internet-status-and-management).
 
 ### Select Version
