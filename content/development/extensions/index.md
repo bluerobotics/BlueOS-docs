@@ -105,7 +105,7 @@ Every Extension has a backend, whereby:
 
 Frontend interfaces are optional, but well-supported:
 - Some device drivers and the like require no/minimal configuration, so may not require a frontend
-- Services that provide a frontend can be [automatically detected by BlueOS](#web-interface-http-server) for convenience 
+- Services that provide a frontend can be [automatically detected by BlueOS](#web-interface-http-server) for convenience
 
 
 #### Metadata (Dockerfile)
@@ -217,7 +217,7 @@ For an Extension to be properly managed and shareable, the Dockerfile it's creat
       ```
 - `LABEL requirements`
    - SemVer-compliant dependency requirements for this Extension to work correctly (with BlueOS and/or other Extensions)
-   - format not yet finalised 
+   - format not yet finalised
       - will likely be something like `repo/extension-name >= version`
 - `LABEL type`
    - Useful for broad-strokes filtering when searching for/browsing Extensions
@@ -343,7 +343,7 @@ Different types of Extensions have different functionality, and there are often 
       - [This is a good example](https://github.com/bluerobotics/BlueOS-Extensions-Repository/pull/7/files)
    1. Once the PR is merged, a continuous-integration job will automatically use the information from the provided metadata file to access Docker Hub and fetch the labels for all tags that are SemVer-compliant
    1. The fetched information is then compiled and published to the [Manifest file](https://github.com/bluerobotics/BlueOS-Extensions-Repository/gh-pages/manifest.json) in the `gh-pages` branch
-   
+
 #### Installed Extensions
 Once installed on the [Onboard Computer](@/integrations/hardware/required/onboard-computer/index.md), Extensions are stored at `/var/lib/docker` in the file-system, but should be managed through the BlueOS [Extensions Manager](../../usage/advanced/#extensions-manager).
 
@@ -395,7 +395,7 @@ Basic functionality can be tested from within the core BlueOS Docker container u
 
 #### Extension Creation and Docker Image Upload
 
-Extensions are Docker images, so the packaging process involves 
+Extensions are Docker images, so the packaging process involves
 
 1. Creating a [Dockerfile](#metadata-dockerfile) describing what you would like to package and how it should execute, then
 1. Using it to build one or more Docker Images for the hardware architectures you wish to support, then
@@ -452,7 +452,7 @@ For reference:
 
 #### Manual/Development Installs
 
-Testing each Extension release before making it available to install from the online store is strongly recommended. 
+Testing each Extension release before making it available to install from the online store is strongly recommended.
 
 1. Go to the [Extensions Manager](../../usage/advanced/#extensions-manager) in BlueOS
 1. Click on the "Installed" tab
@@ -474,7 +474,7 @@ Testing each Extension release before making it available to install from the on
 
 ##### Accessing an Installed Extension's Docker Container
 
-It is possible to enter running Docker containers via the [Terminal](../../advanced-usage/#terminal), by 
+It is possible to enter running Docker containers via the [Terminal](../../advanced-usage/#terminal), by
 
 1. Running `red-pill` to drop down to the base operating system (from the BlueOS-core container)
 1. Running `docker container ls` to list the currently running Docker containers
@@ -487,7 +487,7 @@ It is possible to enter running Docker containers via the [Terminal](../../advan
         - [cd](https://manpages.org/cd) to change directories (e.g. `cd folder/path/`)
         - [cat](https://manpages.org/cat) to display the contents of a text file (e.g. `cat filename`)
         - [sed](https://manpages.org/sed) to replace text in a file (e.g. `sed -i 's/current text/replacement text/g'`)
-    - You may be able to use a text editor like [nano](https://manpages.org/nano), [vim](https://manpages.org/vim), 
+    - You may be able to use a text editor like [nano](https://manpages.org/nano), [vim](https://manpages.org/vim),
     or [vi](https://manpages.org/vi) if the Extension's base image includes one
         - Alternatively you may be able to install one with [apt](https://manpages.org/apt/8)
     - If the extension has a web interface, and you want to run a modified version at the same time as the old one then it

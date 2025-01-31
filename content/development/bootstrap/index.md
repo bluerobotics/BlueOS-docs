@@ -15,7 +15,7 @@ top = false
 
 ## Function
 
-BlueOS-bootstrap is responsible for making sure [BlueOS-core](../core) is running as expected, as well as gracefully restarting core during BlueOS updates and if it is detected to have unexpectedly stopped/crashed. 
+BlueOS-bootstrap is responsible for making sure [BlueOS-core](../core) is running as expected, as well as gracefully restarting core during BlueOS updates and if it is detected to have unexpectedly stopped/crashed.
 For an update the current core image gets shut down and the newly installed image gets started in its place, whereas in the case of a crash bootstrap reverts to running a known working core image, which is currently the one tagged as `factory` (which is whatever it was first flashed with), so that it's at least possible to access the interface.
 
 ## Codebase
