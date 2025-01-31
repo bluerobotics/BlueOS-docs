@@ -44,7 +44,7 @@ If a brighter screen or water resitance are required, then a rugged or semi-rugg
 
 ### Custom Computers
 
-With the introduction of the ArduSub system and compatibility with major operating systems, users are building their own topside computer systems, usually into ruggedized travel cases. A high brightness screen (>1000 nits) is installed in the lid and the computer components are located into the remainder of the case. 
+With the introduction of the ArduSub system and compatibility with major operating systems, users are building their own topside computer systems, usually into ruggedized travel cases. A high brightness screen (>1000 nits) is installed in the lid and the computer components are located into the remainder of the case.
 
 Below is an example of such a case from Blue Link:
 

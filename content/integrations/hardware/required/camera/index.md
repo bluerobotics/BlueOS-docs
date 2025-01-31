@@ -52,10 +52,10 @@ An [Ethernet Switch](../../additional/ethernet-switch/) is required unless the c
 
 Choosing a camera setup for underwater use can be challenging, because a tradeoff must be made between the various properties of the camera, its lens, and the bandwidth required for streaming. If you are mostly interested in camera alternatives and improvements, there's a brief comparison table [here](https://discuss.bluerobotics.com/t/camera-lens-for-br-camera/10993/3#seeing-better-qualityresolution-1) of some options that have been posted about on the Blue Robotics forum.
 
-The following points discuss the tradeoffs between different camera properties, with a focus on the underwater environment: 
+The following points discuss the tradeoffs between different camera properties, with a focus on the underwater environment:
 
 ### Higher Resolution
-- assuming sufficient lighting and good enough optics, more pixels means clearer fine details, but 
+- assuming sufficient lighting and good enough optics, more pixels means clearer fine details, but
 - more pixels means more data to send, so requires more communication bandwidth and storage space, and reduces options for multiple additional cameras/sensors to be run at the same time
 - also generally means the physical sensor for each pixel is smaller, which reduces low-light performance
 - some high resolution cameras support moving the output frame when streaming at lower resolutions, which can allow for optical zooming, panning, and tilting without needing to move the camera itself - that's most effective with a wide-angle lens

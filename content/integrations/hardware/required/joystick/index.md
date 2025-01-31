@@ -29,7 +29,7 @@ The following joysticks have been tested and are supported:
 
 ## Custom Joysticks
 
-With the inclusion of industry standard drivers and APIs, custom controllers can be built using a joystick control board and standard buttons and sticks. 
+With the inclusion of industry standard drivers and APIs, custom controllers can be built using a joystick control board and standard buttons and sticks.
 
 Marine Simulation wrote a quick tutorial on how to do so: [Custom Hand Controller Design](http://marinesimulation.com/custom-hand-controller-design/)
 

@@ -17,7 +17,7 @@ Sonars are useful pieces of equipment in situations where visibility is low. Son
 
 If you want to learn more, see this [guide to sonar technology and acoustic devices](https://bluerobotics.com/learn/a-smooth-operators-guide-to-underwater-sonars-and-acoustic-devices/).
 
-## Echosounders and Altimeters 
+## Echosounders and Altimeters
 
 A useful type of sonar is an echosounder, also known as an altimeter when installed on an underwater vehicle. An altimeter is a single-beam sonar which gets a range measurement from the bottom of the ROV to the seabed. This is useful in low visibility situations where the distance to the bottom is unknown.
 
@@ -54,7 +54,7 @@ The following multibeam sonars have been installed on ArduSub vehicles:
  * [Blueprint Subsea Oculus Series Multibeam Sonars](https://www.blueprintsubsea.com/oculus/) (Ethernet)
  * [Tritech International Gemini 720im Multibeam Sonar](https://www.tritech.co.uk/product/gemini-720im) (Ethernet or RS485 connection through tether)
  * [Tritech International Gemini 720ik Multibeam Sonar](https://www.tritech.co.uk/product/gemini-720ik) (Ethernet)
- 
+
 ## Profiling Sonars
 
 Profiling sonars are 1-dimensional echosounders with a rotating head that are able to get accurate acoustic range data to create a "profile" of the surrounding environment. These types of sonars are useful for inspecting material buildup in pipes.

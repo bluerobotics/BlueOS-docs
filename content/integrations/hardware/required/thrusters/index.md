@@ -20,7 +20,7 @@ ArduSub can be used with both brushless and brushed thrusters, but all motion-co
 
 ## Brushless Thrusters
 
-Brushless thrusters are a good choice for propulsion as they do not have brushes that must be protected or wear out. 
+Brushless thrusters are a good choice for propulsion as they do not have brushes that must be protected or wear out.
 
 ## Recommended Brushless Thrusters
 

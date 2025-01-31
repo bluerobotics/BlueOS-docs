@@ -12,7 +12,7 @@ toc = true
 top = false
 +++
 
-A positioning system is a useful addition to an ArduSub vehicle either for displaying numerical location coordinates or the position of the vehicle on a map in QGroundControl. 
+A positioning system is a useful addition to an ArduSub vehicle either for displaying numerical location coordinates or the position of the vehicle on a map in QGroundControl.
 
 Below is an example of a Water Linked Underwater GPS System being used to locate a shipwreck:
 
