@@ -412,9 +412,10 @@ QuickStart repositories serve as a way to get an example Extension up and runnin
 1. "`Use this template`" from the top right of a QuickStart GitHub repository
     - [Python QuickStart](https://github.com/BlueOS-Community/QuickStart-Python-Extension)
 2. [Create a Docker repository](https://docs.docker.com/docker-hub/repos/create/), to host your Docker images for this Extension
-    - The name should be something like `blueos-extension-image-name` (e.g. `blueos-quickstart`)
+    - The name should be `blueos-` followed by something like `extension-image-name` (e.g. `blueos-quickstart`)
 3. Set up [GitHub Secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository):
     - `DOCKER_USERNAME`: your Docker Hub username
+        - **NOT** your email address
     - `DOCKER_PASSWORD`: a Docker Hub [access token](https://docs.docker.com/security/for-developers/access-tokens/) (Read & Write), to allow your GitHub repository actions to upload Docker images to your Docker Hub account
 4. Set up [GitHub Variables](https://docs.github.com/en/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository):
     - `IMAGE_NAME`: the name you chose for your Docker repository
