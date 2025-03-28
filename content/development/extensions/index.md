@@ -6,6 +6,7 @@ template = "docs/page.html"
 sort_by = "weight"
 weight = 40
 draft = false
+aliases = ['/usage/extensions']
 
 [extra]
 lead = ''
