@@ -97,7 +97,7 @@ BlueOS has almost all features from the old Companion, and several hotly-request
 | [**Ping Sonar Devices**](../advanced/#ping-sonar-devices) | &rarr; | &rarr; | &rarr;<br>+ Detects Ping360 in ethernet configuration<br>+ Ping Sonar distance estimates can be *sent via MAVLink* | &rarr;<br>+ Devices can be *hot-plugged*<br><br>- *No MAVLink pipeline* | Ping Sonar and Ping360 can connect with [Ping Viewer](https://docs.bluerobotics.com/ping-viewer/)<br>+ Ping Sonar distance estimates can be *sent via MAVLink* |
 | [**Serial Bridges**](../advanced/#serial-bridges) | &rarr;<br>+ Separate target and listener ports | &rarr; | &rarr; | &rarr; | Create and manage bridges between serial and UDP/TCP endpoints |
 | **Water Linked** | &rarr; | &rarr; | DVL-A50 and UGPS extensions available through Extensions Manager | [DVL-A50 package available](https://discuss.bluerobotics.com/t/external-integrations-extensions/10912#integration-example-dvl-5) | Supports UGPS and DVL-A50 |
-| [**Extensions**](../extensions/) | &rarr; | &rarr; | Custom extensions available through Extensions Manager | &rarr; | Custom functionality requires forking the codebase |
+| [**Extensions**](@/development/extensions/index.md) | &rarr; | &rarr; | Custom extensions available through Extensions Manager | &rarr; | Custom functionality requires forking the codebase |
 
 ## Release Types
 BlueOS has multiple release types, to allow choosing your preferred balance between access to the latest fixes and improvements, and stability of the software. The three release types are:

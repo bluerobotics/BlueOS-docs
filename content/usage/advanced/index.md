@@ -162,7 +162,7 @@ is wide enough, the sidebar automatically stays open.
 
 - The theme content at the top [is configurable](#theme-content)
 {% pirate() %}
-- [The development documentation](../development/extensions/#web-interface-http-server)
+- [The development documentation](@/development/extensions/index.md#web-interface-http-server)
 specifies the requirements for a service page to appear in the sidebar
 {% end %}
 
@@ -286,7 +286,7 @@ and where relevant
 - its API documentation (in a live-testable form)
 - the current API version
 
-The individual services are documented [in the development documentation](../development/core/#services).
+The individual services are documented [in the development documentation](@/development/core/index.md#services).
 {% end %}
 {{ easy_image(src="available-services", width=600, class="pirate") }}
 
@@ -319,7 +319,7 @@ versions
    - Previously-installed versions are kept locally on the device, unless
    manually deleted, which provides an easy route for roll-backs to undesired
    changes (e.g. during development)
-- Allows updating the [bootstrap image](../development/bootstrap) to match the current version
+- Allows updating the [bootstrap image](@/development/bootstrap/index.md) to match the current version
 - Allows loading remote versions (including from custom docker-hub repositories)
 - Allows manually uploading docker images from the surface computer
 - If an undetected failure somehow occurs in BlueOS (or if a broken version gets
@@ -657,7 +657,7 @@ it automatically (via MAVLink)
 {{ service(service="Kraken", port=9134, link="/services/kraken", based=true) }}
 
 The Extensions Manager is in charge of fetching, installing, updating, and managing
-[Extensions](../extensions).
+[Extensions](@/development/extensions/index.md).
 
 The Store tab shows the available extensions, with a default filter which excludes
 the development example extensions.
