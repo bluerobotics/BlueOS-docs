@@ -41,7 +41,7 @@ Some of these principles will only be evident in future releases, but the underl
 
 This covers a summary of the major changes and new features in BlueOS-1.1. Where applicable relevant features are also included in the [feature comparison table](#feature-comparison). For detailed coverage of every change, please see the [full release notes](https://github.com/bluerobotics/BlueOS-docker/releases).
 
-### [Extensions](../extensions) `(NEW! - beta)`
+### [Extensions](@/development/extensions/index.md) `(NEW! - beta)`
 - Independently installed and run software components, that work together with BlueOS
 - Users can download extensions for the integrations and features they want to use
 - Developers can create extensions, and share them with others
@@ -81,7 +81,7 @@ This covers a summary of the major changes and new features in BlueOS-1.1. Where
    - Settings are now persistent across boots
 - [BlueOS Version](../advanced/#blueos-version) (REPLACES "Version Chooser")
    - New progress bar while downloading and extracting new images
-   - Now allows updating the [bootstrap image](../development/bootstrap)
+   - Now allows updating the [bootstrap image](@/development/bootstrap/index.md)
 - [System Information](../advanced/#system-information)
    - New "Firmware" tab, with information about the computer's firmware and bootloader
 - [Network Test](../advanced/#network-test)
@@ -144,7 +144,7 @@ BlueOS has almost all features from the old Companion, and several hotly-request
 | [**Ping Sonar Devices**](../advanced/#ping-sonar-devices) | &rarr;<br>+ Detects Ping360 in ethernet configuration<br>+ Ping Sonar distance estimates can be *sent via MAVLink* | &rarr;<br>+ Devices can be *hot-plugged*<br><br>- *No MAVLink pipeline* | Ping Sonar and Ping360 can connect with [Ping Viewer](https://docs.bluerobotics.com/ping-viewer/)<br>+ Ping Sonar distance estimates can be *sent via MAVLink* |
 | [**Serial Bridges**](../advanced/#serial-bridges) | &rarr; | &rarr; | Create and manage bridges between serial and UDP/TCP endpoints |
 | **Water Linked** | DVL-A50 and UGPS extensions available through Extensions Manager | [DVL-A50 package available](https://discuss.bluerobotics.com/t/external-integrations-extensions/10912#integration-example-dvl-5) | Supports UGPS and DVL-A50 |
-| [**Extensions**](../extensions/) | Custom extensions available through Extensions Manager | &rarr; | Custom functionality requires forking the codebase |
+| [**Extensions**](@/development/extensions/index.md) | Custom extensions available through Extensions Manager | &rarr; | Custom functionality requires forking the codebase |
 
 ## Release Types
 BlueOS has multiple release types, to allow choosing your preferred balance between access to the latest fixes and improvements, and stability of the software. The three release types are:
