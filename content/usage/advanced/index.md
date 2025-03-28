@@ -179,7 +179,7 @@ is wide enough, the sidebar automatically stays open.
 
 - The theme content at the top [is configurable](#theme-content)
 {% pirate() %}
-- [The development documentation](../development/extensions/#web-interface-http-server)
+- [The development documentation](@/development/extensions/index.md#web-interface-http-server)
 specifies the requirements for a service page to appear in the sidebar
 {% end %}
 
@@ -703,7 +703,7 @@ it automatically (via MAVLink)
 {{ service(service="Kraken", port=9134, link="/services/kraken", based=true) }}
 
 The Extensions Manager is in charge of fetching, installing, updating, and managing
-[Extensions](../extensions).
+[Extensions](@/development/extensions/index.md).
 
 The Store tab shows the available extensions, with a default filter which excludes
 the development example extensions.
