@@ -222,7 +222,6 @@ For an Extension to be properly managed and shareable, the Dockerfile it's creat
       - will likely be something like `repo/extension-name >= version`
 - `LABEL type`
    - Useful for broad-strokes filtering when searching for/browsing Extensions
-   - Not yet implemented in the Extensions Manager
    - Should be one of the following strings:
       - `"device-integration"`
       - `"other"`
@@ -230,7 +229,6 @@ For an Extension to be properly managed and shareable, the Dockerfile it's creat
       - `"example"` (for Extension examples)
 - `LABEL tags`
    - Useful for finer-grained filtering to help find relevant Extensions
-   - Not yet implemented in the Extensions Manager
    - Must be alpha-numeric (no capital letters, no symbols except dashes)
    - Limited to 10 tags per extension
    - Some examples (focused around possible Extension functions):
