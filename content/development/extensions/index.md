@@ -268,19 +268,19 @@ To do so requires the Extension to run a HTTP server[^1], at which it must serve
    - The official URL for the extension
 - `"api"`
    - The official URL for the extension's API
-- `"extra_query"` (optional)
+- `"extra_query"` (optional, `New in 1.4`)
    - A string of extra query parameters to include when the extension is accessed through the sidebar
 - `"avoid_iframes"` (optional)
    - Boolean (`true`/`false`) specifying whether to avoid embedding the extension interface in an iframe.
 - `"new_page"` (optional)
    - Boolean (`true`/`false`) specifying whether to open the extension in a new page instead of in a BlueOS frame
-- `"works_in_relative_paths"` (optional)
+- `"works_in_relative_paths"` (optional, `New in 1.4`)
    - Boolean (`true`/`false`) specifying whether the extension can be served at an arbitrary base URL
      (i.e. it does not access its resources using absolute paths)
    - This is required for extensions to be accessible remotely (e.g. via a cloud proxy), and is recommended for all extensions
    - Makes the extension available at `/extensionv2/<sanitized_name>/`
       - The sanitized name is the `name` field in lowercase, with all non alphanumeric characters removed
-- `"extras"` (optional)
+- `"extras"` (optional, `New in 1.4`)
    - A dictionary of string keys and values, intended for convenience use (e.g. for simplifying integration with other extensions)
 
 As an example:
