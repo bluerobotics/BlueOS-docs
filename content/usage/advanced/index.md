@@ -85,7 +85,10 @@ On the right side of the header you'll find:
 ##### Wired network management (ethernet / USB-OTG)
 {{ service(service="Cable Guy", port=9090, link="/services/cable_guy", based=true) }}
 
-For each interface, choose between:
+An ethernet connection can generally be accessed through the
+[http://blueos-ethernet.local](http://blueos-ethernet.local) mDNS address.
+
+When configuring a wired interface, choose between:
 - A static IP
 - A dynamic IP
 - A DHCP server
@@ -750,6 +753,7 @@ versions by setting the docker tag.
 - the vehicle name makes it easier to determine which vehicle you are connected to
 - changing the mDNS hostname changes the address you connect to for the browser interface
     - wired connection (ethernet tether / USB-OTG) -> [http://custom.local](http://custom.local)
+        - ethernet can also be accessed through [http://custom-ethernet.local](http://custom-ethernet.local)
     - wifi connection -> [http://custom-wifi.local](http://custom-wifi.local)
     - BlueOS hotspot -> [http://custom-hotspot.local](http://custom-hotspot.local)
     - [http://blueos.local](http://blueos.local) will still be available for wired connections,

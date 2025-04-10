@@ -28,7 +28,7 @@ The web interface monitors the autopilot and other main software components. It 
 - By default you can access BlueOS via [blueos-avahi.local](http://blueos-avahi.local)
 - When BlueOS is connected via a wired connection, it is also possible to use [blueos.local](http://blueos.local/)
     - This applies if the BlueOS device is connected to via a direct ethernet connection, or [USB-OTG](#usb-otg)
-    - On an ethernet connection you can also access BlueOS via its static IP address ([192.168.2.2](http://192.168.2.2/))
+    - On an ethernet connection you can also access BlueOS via [blueos-ethernet.local](http://blueos-ethernet.local/) or its static IP address ([192.168.2.2](http://192.168.2.2/))
 - When BlueOS is connected to the same wifi network as your device you can also connect with it using [blueos-wifi.local](http://blueos-wifi.local/)
 - By default if BlueOS does not have a wifi connection configured within 5 minutes of booting, it will start its own wifi hotspot which, when connected to, allows accessing the BlueOS interface via [blueos-hotspot.local](http://blueos-hotspot.local/)
     - The hotspot SSID is `BlueOS (******)`, with password `blueosap`
