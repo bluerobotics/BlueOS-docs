@@ -355,6 +355,15 @@ versions
    changes (e.g. during development)
 - Allows updating the [bootstrap image](@/development/bootstrap/index.md) to match the current version
 - Allows loading remote versions (including from custom docker-hub repositories)
+- Allows logging in to one or more docker registries, to access private repositories,
+and to help avoid rate limiting
+   - By default, logs in to the registry for Docker Hub
+   - Custom registries can be authenticated to by specifying the relevant registry index after enabling the switch
+   - Credentials are saved to `.docker/config.json`, by default for the normal `pi` user (and optionally the root user)
+   - Accounts authenticated to the root user are displayed with a shield icon, and are valid for `sudo docker` commands
+{% end %}
+{{ easy_image(src="version-chooser-docker-login", width=400, class="pirate") }}
+{% pirate() %}
 - Allows manually uploading docker images from the surface computer
 - If an undetected failure somehow occurs in BlueOS (or if a broken version gets
 installed) it's possible to easily roll back to a working version from
