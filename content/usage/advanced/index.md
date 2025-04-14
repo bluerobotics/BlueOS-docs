@@ -714,7 +714,7 @@ The Extensions Manager is in charge of fetching, installing, updating, and manag
 [Extensions](@/development/extensions/index.md).
 
 The Store tab shows the available extensions, with a default filter which excludes
-the development example extensions.
+the development example extensions. Beta versions show a red marker on the card corner.
 
 {{ easy_image(src="extensions-store", width=600) }}
 
