@@ -609,7 +609,15 @@ The PWM Outputs tab allows configuring the servo function mappings
 and an automated check to detect motors that spin backwards. Relevant motors can be
 set to run on reversed control signals, so they spin in the expected direction.
 
+Hovering over a motor or output function will attempt to highlight the related component
+in the 3D model.
+
 {{ easy_image(src="vehicle-setup-pwm-outputs", width=600) }}
+
+Clicking on an output in the right side table allows changing its assigned function,
+and configuring its PWM limits and trim value `(New in 1.4)`:
+
+{{ easy_image(src="vehicle-setup-pwm-function", width=450) }}
 
 The Configure tab provides configuration and calibration options for the vehicle sensors and peripherals,
 including failsafes, and reverting parameters to their defaults.
