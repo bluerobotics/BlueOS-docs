@@ -134,6 +134,7 @@ easily connect to it from a phone
 {% pirate() %}
 - Configure network priority ordering
     - Determines which network interface is used for internet connection
+    - Displays internet availability on each network
     - Generally `wlan0` should be at the top (for internet via wifi)
     - Move `eth0` to the top if using internet passthrough via the tether
 {% end %}
