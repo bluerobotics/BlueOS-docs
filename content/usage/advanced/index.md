@@ -592,12 +592,8 @@ view of the model, with a transparent background.
 {{ easy_image(src="vehicle-setup-overview", width=600) }}
 
 {% pirate() %}
-It is possible to override the displayed 3D model by placing an appropriate `.glb`
-file at `userdata/modeloverrides/<vehicle_type>/<vehicle_frame>.glb` (e.g.
-`userdata/modeloverrides/sub/VECTORED_6DOF.glb`), or `userdata/modeloverrides/ALL.glb`.
-
-Documentation for the recommended process for creating a `.glb` file from a vehicle
-model is coming soon.
+It is possible to override the displayed 3D model by providing 
+[an appropriate glTF file](#vehicle-model).
 
 In future this page will also allow
 - using custom highlighting logic for model components
@@ -750,6 +746,12 @@ versions by setting the docker tag.
 ## Interface Theme
 
 ### Theme Content
+#### Company Logo
+
+- square images work best
+
+{{ easy_image(src="theme-logo", width=500, center=true) }}
+
 #### Vehicle Icon
 
 - square images work best
@@ -779,13 +781,60 @@ versions by setting the docker tag.
 
 {{ easy_image(src="theme-name-mdns", width=400, center=true) }}
 
-#### Company Logo
+{% pirate() %}
+#### Vehicle Model
 
-- square images work best
+The 3D model used in the [Vehicle Setup](#vehicle-setup) pages can be replaced with a
+custom glTF file:
+{% end %}
 
-{{ easy_image(src="theme-logo", width=500, center=true) }}
+{{ easy_image(src="vehicle-setup-custom-model", width=600, class="pirate") }}
 
 {% pirate() %}
+There are a variety of ways to create such a file, but our standard process is to:
+1. Export a model of your vehicle as an STL file
+    - triangle meshes are bad for designing, but nice for rendering
+1. Import it into [Blender](https://www.blender.org/)
+1. Remove small parts (including cutting off the threads of screws)
+    - This helps improve performance, with minimal effect on what can be seen
+1. Merge/group pieces that are part of a single component
+    - Select them and press `CTRL+J`
+    - We'll typically rename the groups with meaningful component names as we go
+1. Add materials, to "paint" the parts in different colours
+    - `CTRL+L` can help to select connected faces
+    - Transparent materials can be made by setting low alpha values, and setting the blend mode to "Alpha Blend"
+1. For parts that should sometimes be highlighted in the Vehicle Setup page, start the names of their materials with their [servo function enum name](https://github.com/bluerobotics/BlueOS/blob/master/core/frontend/src/types/autopilot/parameter-sub-enums.ts#L100-L162)
+    - Not case sensitive
+    - E.g. thruster 1 should only use materials with names that start with `motor1`
+1. Merge the parts, set the shading to smooth, and adjust the auto-smoothing of normals to a value that looks right for your components
+1. Reduce the model triangles by adding a decimate modifier
+    - We typically drag the Ratio slider down until the model looks bad, then bring it back up until it looks acceptable
+1. Export as a glTF (`.glb`) file, so it can be read by the BlueOS model viewer
+    - `Mesh / Apply Modifiers` and `Compression` should both be enabled in the export configuration
+1. Save it into the relevant folder in the BlueOS [File Browser](#file-browser)
+    - `userdata/modeloverrides/<vehicle-type>/<vehicle-frame>.glb`
+    - e.g. for a BlueROV2 Heavy, `<vehicle-type>` would be `sub`, and `<vehicle-frame>` would be `VECTORED_6DOF`
+    - to ignore vehicle type switching, you can instead save the file as `/userdata/modeloverrides/ALL.glb`
+1. If you want, it's possible to add annotations (like we have for the motors, in the default model) via the glTF https://modelviewer.dev/editor/
+    - "Add Hotspot" to create a new annotation
+    - Copy the resulting "data surface" attribute into a json file like the following:
+        ```json
+        {
+            "annotations": {
+                "Motor1": {
+                    "surface": "3 1 2510 2509 2511 0.356 0.124 0.521",
+                    "text": "Motor 1"
+                },
+                "Motor2": {
+                    "surface": "2 1 2642 2643 2674 0.638 0.230 0.133",
+                    "text": "Motor 2"
+                },
+            }
+        }
+        ```
+        - annotation names should match the [`SERVOn_FUNCTION`](https://ardupilot.org/sub/docs/parameters.html#servo1-function-servo-output-function) parameter value names
+        - Save the file in the same place as and with the same base name as the model file, e.g. `VECTORED_6DOF.json`
+
 ### Theme Styling
 It is possible to customise the styling of the BlueOS interface by adding a
 `theme_style.css` file at `userdata/styles/` in the [File Browser](#file-browser).
@@ -865,6 +914,7 @@ The explanatory diagram colours are also configurable `(New in 1.4)`:
 }
 ```
 {% end %}
+
 
 <script type="text/javascript">
     function toggle_advanced() {
