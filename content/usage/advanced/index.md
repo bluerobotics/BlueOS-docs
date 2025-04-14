@@ -43,6 +43,7 @@ in) Pirate Mode are shown in [dark mode](#display-mode-management), and describe
 with grey text.
 
 ### Safe Mode
+`New in 1.4`
 
 Operating a vehicle involves some risks to both the vehicle and the operator. When
 BlueOS detects that the vehicle is armed it engages safe mode, which requires explicit
@@ -67,6 +68,12 @@ as percentages, as well as local network usage, which are periodically updated d
 operation:
 
 {{ easy_image(src="widgets", width=350) }}
+
+Widgets are also generated for any enabled network interfaces, which allows monitoring
+real time data bandwidth being downloaded/received by the BlueOS computer and
+uploaded/transmitted from it `(New in 1.4)`:
+
+{{ easy_image(src="widgets-network-usage", width=280) }}
 
 There is also a prominent indicator when the vehicle is in [Safe Mode](#safe-mode):
 
