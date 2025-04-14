@@ -18,6 +18,45 @@ top = false
 BlueOS-bootstrap is responsible for making sure [BlueOS-core](../core) is running as expected, as well as gracefully restarting core during BlueOS updates and if it is detected to have unexpectedly stopped/crashed.
 For an update the current core image gets shut down and the newly installed image gets started in its place, whereas in the case of a crash bootstrap reverts to running a known working core image, which is currently the one tagged as `factory` (which is whatever it was first flashed with), so that it's at least possible to access the interface.
 
+### BlueOS Startup Configuration
+
+It is possible to view and configure how BlueOS is started via the built in [File Browser](@/usage/advanced/index.md#file-browser), in the `configs/bootstrap/startup.json` file.
+
+The file includes a variety of relevant fields, and can be used to inject environment variables through the `environment` variable:
+
+```json
+{
+  "core": {
+    "binds": {
+       ....
+    },
+    "enabled": true,
+    "environment": [
+      "BLUEOS_DISABLE_SERVICES='ping'"
+    ],
+    "image": "bluerobotics/blueos-core",
+    "network": "host",
+    "privileged": true,
+    "tag": "master"
+  }
+}
+```
+
+#### Environment Variables
+
+The currently available environment variables include:
+
+| Variable | Purpose |
+| --- | --- |
+| `BLUEOS_DISABLE_SERVICES` | A comma-separated list of [service names](https://github.com/bluerobotics/BlueOS/tree/master/core/services) to disable. |
+| `BLUEOS_DISABLE_PATCHES` | A  comma-separated list of [patch names](https://github.com/bluerobotics/BlueOS/blob/master/core/tools/blueos_startup_update/blueos_startup_update.py#L696-L726) to disable. |
+| `BLUEOS_DISABLE_STARTUP_UPDATE` | An existence flag which prevents BlueOS from automatically starting. |
+| `BLUEOS_DISABLE_MEMORY_LIMIT` | An existence flag to allow BlueOS services to run without a memory limit. |
+| `SSH_USER` | An optional username as an alternative to the default `pi` user, required by some systems. |
+| `SSH_PASSWORD` | An optional password as an alternative to the default `raspberry`. |
+| `USER_UID` | An optional user ID for SSH key storage ownership, as an alternative to the default `1000`. |
+| `USER_GID` | An optional group ID for SSH key storage ownership, as an alternative to the default `1000`. |
+
 ## Codebase
 
 [BlueOS-bootstrap](https://github.com/bluerobotics/BlueOS/tree/master/bootstrap) is open source, and lives within the broader [BlueOS](https://github.com/bluerobotics/BlueOS) GitHub repository. [Issues](https://github.com/bluerobotics/BlueOS/issues) can be used to report bugs or suggest features, and [Pull Requests](https://github.com/bluerobotics/BlueOS/pulls) fixing bugs or adding new features are welcomed.
