@@ -1,7 +1,7 @@
 +++
 title = "Installation"
 description = "BlueOS installation instructions."
-date = 2023-08-25T07:10:00+11:00
+date = 2025-04-25T08:00:00+10:00
 template = "docs/page.html"
 sort_by = "weight"
 weight = 10
@@ -15,19 +15,25 @@ top = false
 ## Download
 
 BlueOS is a ground-up rewrite software to replace Companion. To use it you'll need to download and flash an SD card.
-It is compatible with both **Raspberry Pi 3** and **Raspberry Pi 4**.
+It is compatible with **Raspberry Pi 3**, **4**, and **5**.
 
-The latest available versions are:
+![Latest Stable](https://img.shields.io/github/v/release/bluerobotics/blueos.svg?label=Latest%20Stable)![Date](https://img.shields.io/github/release-date/bluerobotics/blueos?label=Date)
 
-[![Latest Stable](https://img.shields.io/github/v/release/bluerobotics/blueos.svg?label=Latest%20Stable)
-![Date](https://img.shields.io/github/release-date/bluerobotics/blueos?label=Date)](https://github.com/bluerobotics/blueos/releases/latest/download/BlueOS-raspberry.zip)
+![Latest Beta](https://img.shields.io/github/v/tag/bluerobotics/blueos.svg?label=Latest%20Beta)![Date](https://img.shields.io/github/release-date-pre/bluerobotics/blueos?label=Date)
 
-[![Latest Beta](https://img.shields.io/github/v/tag/bluerobotics/blueos.svg?label=Latest%20Beta)
-![Date](https://img.shields.io/github/release-date-pre/bluerobotics/blueos?label=Date)](https://github.com/bluerobotics/BlueOS/releases)
+Recommended operating system images of the latest stable version can be downloaded here:
+
+| Board Hardware | Image File (with Base OS) | Notes |
+| --- | --- | --- |
+| Raspberry Pi 3B /<br>Raspberry Pi 4B | <a id="v7-bullseye">ARMv7 (32-bit) Bullseye</a> | Standard on Blue Robotics vehicles |
+| Raspberry Pi 5 | <a id="v8-bookworm">ARMv8 (64-bit) Bookworm</a> | Limited testing |
+
+Additional prebuilt operating system images are available in the [releases](https://github.com/bluerobotics/BlueOS/releases),
+along with Docker images for ARMv7/ARMv8 and AMD64 platforms, as well as details of the main changes between different versions.
 
 ## Flash
 
-We recommend using a fresh SD card, with at least 4GB capacity.
+We recommend using a fresh SD card with at least 4GB capacity, although more storage is recommended for recording data.
 
 1. Download and install [Balena Etcher](https://www.balena.io/etcher/)
 1. Insert the SD card to your computer (you may need an SD card reader)
@@ -45,8 +51,53 @@ We recommend using a fresh SD card, with at least 4GB capacity.
 
 ## Updates
 
-Once BlueOS is installed, updating to a different version is simple via the [Version Chooser](../advanced-usage/#blueos-version).
+Once BlueOS is installed, updating to a different version is simple via the [Version Chooser](../advanced/#blueos-version).
 
 ## Manual Installation
 
 For developers with alternative hardware, or who would rather install over a pre-installed base operating system / image, BlueOS provides an [install directory](https://github.com/bluerobotics/BlueOS/tree/master/install) with utilities to help perform manual/software-based installations.
+
+
+<script type="text/javascript">
+async function fetchLatestReleaseInfo() {
+  const url = "https://api.github.com/repos/bluerobotics/BlueOS/releases/latest";
+
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error(`Failed for fetch latest release info: ${response.statusText}`)
+  }
+
+  const info = await response.json()
+  return info
+}
+
+function setLinkURL(aID, artifact) {
+  try {
+    document.getElementById(aID).setAttribute("href", artifact.browser_download_url);
+  } catch (error) {
+    console.error(`Failed to set ${aID} link: ${error.message}`)
+  }
+}
+
+async function setDownloadURLs() {
+  const images = ["v7-bullseye", "v7-bookworm", "v8-bookworm"];
+  try {
+    const releaseInfo = await fetchLatestReleaseInfo()
+    releaseInfo["assets"].forEach((artifact) => {
+      const name = artifact.name;
+      if (name.endsWith(".zip")) {  // probably an RPi image
+        images.forEach((elementID) => {
+          if (name.includes(elementID)) {
+            setLinkURL(elementID, artifact);
+            console.log(`Set ${elementID} link to ${artifact.name} file download URL.`)
+          }
+        })
+      }
+    })
+  } catch (error) {
+    console.error(`Error: ${error.message}`)
+  }
+}
+
+setDownloadURLs()
+</script>
