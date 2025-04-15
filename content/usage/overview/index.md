@@ -1,7 +1,7 @@
 +++
 title = "Overview"
 description = "BlueOS overview."
-date = 2024-04-10T11:45:00+10:00
+date = 2025-04-16T07:35:00+10:00
 template = "docs/page.html"
 sort_by = "weight"
 weight = 0
@@ -16,6 +16,14 @@ top = false
 
 {{ easy_image(src="blueos-banner", width=460, center="true") }}
 {{ easy_image(src="interface-highlight", width=650, center="true") }}
+
+## Quick links
+
+1. [Documentation](@/_index.md)
+2. [Source code](https://github.com/bluerobotics/BlueOS)
+3. [Releases, changelogs, files](https://github.com/bluerobotics/BlueOS/releases)
+4. [Extensions gallery](https://docs.bluerobotics.com/BlueOS-Extensions-Repository)
+5. [Support](#community)
 
 ## A bit of context...
 
@@ -68,15 +76,30 @@ This covers a summary of the major changes and new features in BlueOS-1.4. Where
 - [Autopilot Parameters](../advanced/#autopilot-parameters)
    - Added parameter description override functionality, for custom parameter support
 - [MAVLink Endpoints](../advanced/#mavlink-endpoints)
-   - Added MAVLink Server as a routing alternative, with all-endpoint logging and a detailed debugging interface
+   - Added MAVLink Server as a routing alternative, with all-endpoint logging and a detailed debugging interface,
+   and basic support for Zenoh communication
 - [Vehicle Setup](../advanced/#vehicle-setup)
+   - Added servo limit sliders on the PWM outputs page
    - Added camera mount configuration options
    - Added GPS yaw to the compass page (when available)
+   - Added info tooltips to expose underlying autopilot parameters
 - [Video Streams](../advanced/#video-streams)
    - Added support for H265-encoded video streams
+   - Improved camera manager robustness, and interface intuitiveness
+- [BlueOS Version](../advanced/#blueos-version)
+   - Added an option for Docker login, to reduce rate limiting and improve private registry support
+- [System Information](../advanced/#system-information)
+   - Added hardware board model information
 
 ### Device/Hardware Support
 - Added support for running the Navigator [flight controller](@/integrations/hardware/required/flight-controller/index.md) with 64-bit operating systems
+- Added Raspberry Pi 5 support
+- Added [startup configuration options](@/development/bootstrap/index.md#blueos-startup-configuration) for SSH and system limits,
+to improve support for alternative hardware and development setups
+
+### Connectivity
+- Added a [backup DHCP server](../advanced/#wired-network-management-ethernet-usb-otg) to the ethernet network interface,
+which starts automatically if no other DHCP servers are detected on the network
 
 ### [Data Privacy](../privacy/)
 - Added Sentry reports for user-generated feedback
@@ -88,17 +111,17 @@ BlueOS has almost all features from the old Companion, and several hotly-request
 {% horizontal_scroll(width="1200px") %}
 | Feature | BlueOS 1.4 | BlueOS 1.3 | BlueOS 1.2 | BlueOS 1.1 | BlueOS 1.0 | Companion |
 |---|---|---|---|---|---|---|
-| [**Onboard Computer**](@/integrations/hardware/required/onboard-computer/index.md) | &rarr; | &rarr;<br>+ Raspberry Pi CM4 | &rarr; | &rarr;<br>+ Other Linux-based SBCs images to come | + Raspberry Pi 3B / 3B+ / 4B supported<br>+ You can install from scratch using the installation script in any Linux computer. (Modifications may be necessary for your hardware configuration) | Raspberry Pi 3B required |
+| [**Onboard Computer**](@/integrations/hardware/required/onboard-computer/index.md) | &rarr;<br>+ Raspberry Pi 5 | &rarr;<br>+ Raspberry Pi CM4 | &rarr; | &rarr;<br>+ Other Linux-based SBCs images to come | + Raspberry Pi 3B / 3B+ / 4B supported<br>+ You can install from scratch using the installation script in any Linux computer. (Modifications may be necessary for your hardware configuration) | Raspberry Pi 3B required |
 | [**Flight Controller**](@/integrations/hardware/required/flight-controller/index.md) | &rarr;<br>+ 64-bit Navigator | &rarr; | &rarr; | &rarr;<br>+ Cube Orange<br>+ Pixhawk 6X | &rarr;<br>+ Navigator<br>+ Pixhawk 4 | Pixhawk |
 | [**Video Streams**](../advanced/#video-streams) | &rarr;<br>+ H265 support | &rarr;<br>+ RTSP variants | &rarr; | &rarr;<br>+ MPEG and YUYV encodings<br><br>+ Supports Raspberry Pi cameras | + Easily manage *multiple streams*<br><br>+ UDP and RTSP outputs<br><br>- Audio streaming<br>*not yet supported* ([#990](https://github.com/bluerobotics/BlueOS-docker/issues/990)) | Select a *single* camera to stream over UDP<br>+ Supports Raspberry Pi cameras ([except HQ Camera](https://discuss.bluerobotics.com/t/raspberry-pi-camera-stream-not-working/11976/18))<br>+ Supports a single audio stream over UDP |
 | [**WIFI Manager**](../advanced/#indicators-and-network-configuration) | &rarr; | &rarr;<br>+ External adapter support | &rarr; | &rarr;<br>+ Vehicle provides local hotspot | &rarr;<br>+ Connect to and manage *multiple networks*, like a cellphone or computer WIFI manager | Connect to a *single network*<br>+ Visible and hidden networks supported |
-| [**Ethernet Manager**](../advanced/#indicators-and-network-configuration) | &rarr; | &rarr; | &rarr; | &rarr; | *Multiple* static IPs *and* DHCP configuration | *Single* DHCP (client or server) *or* static network |
+| [**Ethernet Manager**](../advanced/#indicators-and-network-configuration) | &rarr;<br>+Backup DHCP server | &rarr; | &rarr; | &rarr; | *Multiple* static IPs *and* DHCP configuration | *Single* DHCP (client or server) *or* static network |
 | [**Notification system**](../advanced/#header-indicators-and-blueos-configuration) | &rarr; | &rarr; | &rarr; | &rarr; | Notifications about issues, new releases, and the status of your system. | - |
 | [**File Browser**](../advanced/#file-browser) | &rarr; | &rarr; | &rarr;<br>+ Folder for extension data and configuration files | &rarr; | &rarr;<br>+ *Edit files* from the browser | Download and upload files |
 | [**Log Browser**](../advanced/#log-browser) | &rarr; | &rarr; | &rarr; | &rarr; | *Download and manage logs* from the browser<br>+ *Visualise and analyse logs* from the built in viewer | Ssh/terminal only |
 | [**MAVLink inspector**](../advanced/#mavlink-inspector) | &rarr; | &rarr; | &rarr; | &rarr;<br>+ MAVLink2REST "watcher" option for individual message types | See and *inspect MAVLink messages in real time* from the browser | See latest MAVLink messages via MAVLink2REST |
 | [**Network test**](../advanced/#network-test) | &rarr;<br>+ Live usage widget | &rarr; | &rarr; | &rarr;<br>+ Graph during speed tests | &rarr;<br>+ Check *real time latency* | Check upload and download speed from the Control Station Computer to the vehicle's Onboard Computer |
-| [**System information**](../advanced/#system-information) | &rarr; | &rarr; | &rarr; | &rarr; | Provides all the necessary information about the hardware, operating system, running processes, CPU, memory, disk, network usage and status | Basic usage statistics, list of connected devices |
+| [**System information**](../advanced/#system-information) | &rarr;<br>+ Board model | &rarr; | &rarr; | &rarr; | Provides all the necessary information about the hardware, operating system, running processes, CPU, memory, disk, network usage and status | Basic usage statistics, list of connected devices |
 | [**Web Terminal**](../advanced/#terminal) | &rarr; | &rarr; | &rarr;<br>+ Support for non-`pi` users | &rarr; | &rarr;<br>+ Uses a tmux session | Access Linux terminal from the browser |
 | [**Autopilot Firmware**](../advanced/#autopilot-firmware) | &rarr; | &rarr; | &rarr; | &rarr; | &rarr;<br>+ *General ArduPilot* downloads;<br>+ *select vehicle* to update | `stable`, `beta`, and `devel` releases, custom uploads, and restore default parameters;<br>*ArduSub-only* downloads |
 | [**Autopilot Parameters**](../advanced/#autopilot-parameters) | &rarr;<br>+ Custom description overrides | &rarr;<br>+ Intuitive ArduPilot calibrations and configuration<br>+ PX4 parameter descriptions | &rarr; | View, search, and edit ArduPilot vehicle parameters | - | - |
@@ -128,8 +151,14 @@ When BlueOS is connected to the internet, a notification appears if a newer vers
 
 It's worth noting that the [Version Chooser](../advanced/#blueos-version) in general offers several major robustness and versatility improvements over the previous 'latest update only' approach, which should benefit both users and developers.
 
-## Quick links
+## Community
 
-1. [Documentation](@/_index.md)
-2. [Source code](https://github.com/bluerobotics/BlueOS)
-3. [Releases, changelogs, files](https://github.com/bluerobotics/BlueOS/releases)
+### Discussions and Support
+
+- [Discussion Forum](https://discuss.bluerobotics.com/c/bluerobotics-software/blue-os/85)
+- [Issues and Feature Requests](https://github.com/bluerobotics/BlueOS/issues)
+- [Chat (Discord)](https://discord.gg/w2yZK6Qkdr)
+
+### Developer Presentations
+
+See [development docs](@/development/overview/index.md#developer-presentations).
