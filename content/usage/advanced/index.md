@@ -1,7 +1,7 @@
 +++
 title = "Advanced Usage"
 description = "BlueOS advanced usage documentation."
-date = 2024-09-26T16:00:00+11:00
+date = 2025-04-16T06:20:00+10:00
 template = "docs/page.html"
 sort_by = "weight"
 weight = 30
@@ -749,6 +749,9 @@ connected at that time, with UDP streams counting up from port `5600`
 
 {{ simple_pirate_image(src="video-stream-example", width=400, center=true) }}
 
+- H264-encoded streams can be repackaged as WebRTC, and viewed and recorded in
+[Cockpit](https://blueos.cloud/cockpit/docs/latest/usage/advanced/#video-widgets)
+   - H265-encoded streams also work, but currently only on macOS `(New in 1.4)`
 - By default the streams are also presented via MAVLink, so QGroundControl (>=v4.1.7)
 can toggle between them without needing to know specific ports
 {% pirate() %}
@@ -759,13 +762,13 @@ can toggle between them without needing to know specific ports
 {{ easy_image(src="qgc_switch_streams", width=400, center=true) }}
 
 - Camera settings (brightness, exposure, etc) that are exposed via UVC can be
-configured with the "Configure" button
+configured with the "Device Controls" button
 
 {{ easy_image(src="video-config-example", width=500, center=true) }}
 
 - Camera settings are also exposed via the
 [MAVLink camera protocol](https://mavlink.io/en/services/camera.html), so are
-controllable in QGroundControl
+controllable in applications like QGroundControl
 - Switching streams in QGroundControl while recording stops the current recording
    - If you are regularly switching streams it may be worth doing a screen recording
    either instead of or as well as recording the base video
@@ -781,11 +784,9 @@ controllable in QGroundControl
    - Detection requires turning on legacy camera support:
       1. turn on via the settings button in the buttom right corner
       2. reboot the onboard computer to enable
-{% pirate() %}
 - It is possible to use the "Redirect source" element to make an ethernet camera
-available via the BlueOS camera manager, which allows QGroundControl to detect
-it automatically (via MAVLink)
-{% end %}
+available via the BlueOS camera manager, which allows Cockpit and QGroundControl 
+to detect it automatically
 
 {{ simple_pirate_image(src="video", width=600) }}
 
