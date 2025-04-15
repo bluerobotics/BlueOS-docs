@@ -642,6 +642,11 @@ and configuring its PWM limits and trim value `(New in 1.4)`:
 The Configure tab provides configuration and calibration options for the vehicle sensors and peripherals,
 including failsafes, and reverting parameters to their defaults.
 
+{% note() %}
+Pages with configurable options usually include info icons above the interface components, which can be 
+hovered over for extra information about the underlying autopilot parameters.
+{% end %}
+
 ##### Parameters
 - Parameters can be reset to the default values defined and stored in the firmware
 - Full sets of recommended parameters are available for Blue Robotics vehicles
