@@ -619,6 +619,8 @@ In future this page will also allow
 - displaying device statuses from extensions
 {% end %}
 
+#### PWM Outputs
+
 The PWM Outputs tab allows configuring the servo function mappings
 (for motors, lights, camera tilt, etc), as well as manually testing the motors,
 and an automated check to detect motors that spin backwards. Relevant motors can be
@@ -634,25 +636,84 @@ and configuring its PWM limits and trim value `(New in 1.4)`:
 
 {{ easy_image(src="vehicle-setup-pwm-function", width=450) }}
 
+#### Autopilot Configuration
+`New in 1.3`
+
 The Configure tab provides configuration and calibration options for the vehicle sensors and peripherals,
 including failsafes, and reverting parameters to their defaults.
-<br>`New in 1.3`
 
+##### Parameters
+- Parameters can be reset to the default values defined and stored in the firmware
+- Full sets of recommended parameters are available for Blue Robotics vehicles
 {{ easy_image(src="vehicle-setup-configure-params", width=600) }}
 
+##### Gyroscope
+- Gyroscope calibration affects the vehicle attitude (orientation) estimates, and
+particularly the measured rotation rates
 {{ easy_image(src="vehicle-setup-configure-gyro", width=600) }}
 
+##### Accelerometer
+- [Accelerometer calibration](https://ardupilot.org/sub/docs/common-accelerometer-calibration.html)
+affects the detected gravity direction, as well as speed estimates
+   - Full calibration is a detailed calibration of all three axes, and requires rotating
+   the vehicle
+   - Quick calibration is a simplified, lower-quality calibration which only requires
+   placing the vehicle on a level surface
+      - This can be sufficient for vehicles that mostly operate in a level orientation
 {{ easy_image(src="vehicle-setup-configure-accel", width=600) }}
 
+##### Compass
+- [Compass calibration](https://ardupilot.org/sub/docs/common-compass-calibration-in-mission-planner.html) 
+affects the vehicle yaw (heading) estimate
+   - It compensates for constant magnetic effects caused by the vehicle structure, and large scale 
+   compass declination effects using a world magnetic model, but cannot compensate for local
+   [magnetic interference](https://ardupilot.org/sub/docs/common-magnetic-interference.html#common-magnetic-interference)
+      - The world magnetic model requires an estimate of the vehicle's position, and can get
+      outdated when using an old autopilot version
+         - In case there is no global positioning sensor available, an option is provided to
+         determine a rough position estimate using [GeoIP](https://en.wikipedia.org/wiki/Internet_geolocation),
+         or to specify coordinates manually
+         - A rough position estimate is saved persistently when calibrating, but may need to be changed
+         [in the autopilot parameters](https://ardupilot.org/sub/docs/parameters.html#origin-lat-backup-latitude-for-ekf-origin)
+         if the vehicle is operating in a significantly different part of the world to where it was configured
+   - Full onboard calibration is a detailed calibration which requires rotating the vehicle about
+   all three of its axes
+   - Large vehicle calibration is a simplified, lower-quality calibration which only requires
+   pointing the vehicle (true) North
+      - Results can be improved afterwards using Compass Learn
+   - Compass Learn calibrates the compasses automatically through operation of the vehicle
+      - It requires a valid global position estimate, and a period of driving the vehicle around
+   - Log-based calibration analyses a log from a previous flight, and usually provides the best results
+      - It is not currently available through the Vehicle Setup page, but can be accessed via the Mag Fit
+      tool in the [Log Browser](#log-browser) (when replaying a log), and the resulting values can be
+      copied across to the autopilot parameters
+- Available compasses can be disabled or reordered, and flagged as internal or external to the flight
+controller board
 {{ easy_image(src="vehicle-setup-configure-compass", width=600) }}
 
+##### Barometer
+- Barometer calibration sets the reference pressure for altitude/depth measurements, and the
+internal pressure for vehicles with enclosed electronics
+   - It should generally be performed at the start of each dive/flight
 {{ easy_image(src="vehicle-setup-configure-baro", width=600) }}
 
+##### Lights
+- ROV lights configuration allows specifying the output pins for two sets of PWM-controlled
+lights, and the number of steps the control is split into
 {{ easy_image(src="vehicle-setup-configure-lights", width=600) }}
 
+##### Failsafes
+- Failsafe configuration exposes important autopilot failsafe features through an intuitive interface
+- Failsafes should be set up as part of responsible operation, and can provide early warnings of
+problems, and trigger automated safe behaviours if a critical issue occurs
 {{ easy_image(src="vehicle-setup-configure-failsafes", width=600) }}
 
+##### Camera Gimbal
 `New in 1.4`
+- Pitch control for the camera gimbal requires specifying the PWM limits of the gimbal servo
+motor, and their relationship with its tilt angle range
+- Auto-stabilization allows the camera to maintain its current pitch angle (relative to Earth),
+by compensating for pitch rotations of the vehicle
 {{ easy_image(src="vehicle-setup-configure-gimbal", width=600) }}
 
 ### Video Streams
