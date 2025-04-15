@@ -100,6 +100,9 @@ When configuring a wired interface, choose between:
 - A dynamic IP
 - A DHCP server
    - Serves the lease range 101-200 `(New in 1.4)`
+   - Can be configured as a backup, which only runs if no existing DHCP server is detected on the network `(New in 1.4)`
+
+{{ easy_image(src="dhcp-server", width=300, center=true) }}
 
 It is possible to have multiple connections per interface type.
 
