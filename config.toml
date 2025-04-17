@@ -1,6 +1,6 @@
 # The URL the site will be built for
-base_url = "https://blueos.cloud/docs/stable"
-title = "BlueOS stable"
+base_url = "https://blueos.cloud/docs/1.3"
+title = "BlueOS 1.3"
 
 # The site theme to use.
 theme = "bluetheme"
