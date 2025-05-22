@@ -16,7 +16,7 @@ top = false
 ## Governance and Rules
 
 ### License
-The BlueOS codebase is dual-licensed under [AGPLv3](https://github.com/bluerobotics/BlueOS/blob/master/LICENSE-agplv3.md) and BlueOS Custom License (contact [software@bluerobotics.com](mailto:software@bluerobotics.com)).
+The [BlueOS codebase](https://github.com/bluerobotics/BlueOS) is dual-licensed under [AGPLv3](https://github.com/bluerobotics/BlueOS/blob/master/LICENSE-agplv3.md) and BlueOS Custom License (contact [software@bluerobotics.com](mailto:software@bluerobotics.com)).
 
 ### Contributor Code of Conduct
 Developers of and contributors to BlueOS are expected to follow the [BlueOS Contributor Code of Conduct](https://github.com/bluerobotics/BlueOS/blob/master/CoC.md), violations of which may incur temporary or permanent bans from the project.
@@ -86,7 +86,7 @@ Extensions are individual Docker images that run independently of BlueOS, but ca
 While BlueOS itself runs locally on the vehicle, there are various cloud-based services involved that allow downloading new BlueOS releases, installing new autopilot firmware, finding and installing available extensions, finding information about BlueOS, and getting support.
 
 Of note are
-1. The [BlueOS-docker repository](https://github.com/bluerobotics/BlueOS-docker), where BlueOS-core and BlueOS-bootstrap are developed
+1. The [BlueOS repository](https://github.com/bluerobotics/BlueOS), where BlueOS-core and BlueOS-bootstrap are developed
 1. The [Blue Robotics DockerHub](https://hub.docker.com/u/bluerobotics/), where the BlueOS-core and BlueOS-bootstrap Docker images are deployed/hosted
 1. The [BlueOS-Extensions-Repository](https://github.com/bluerobotics/BlueOS-Extensions-Repository), where BlueOS extensions are registered and findable from
 1. The [ArduPilot Firmware Server](https://firmware.ardupilot.org), where autopilot firmwares are fetched from
