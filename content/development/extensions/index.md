@@ -125,7 +125,7 @@ For an Extension to be properly managed and shareable, the Dockerfile it's creat
          ```dockerfile
          "HostConfig": {\
            "Binds":[\
-             "/usr/blueos/extensions/data-logger:/app",\
+             "/usr/blueos/extensions/data-logger:/app"\
            ]\
          }
          ```
