@@ -1,7 +1,7 @@
 +++
 title = "Positioning Sensors (GPS / DVL)"
 description = "Allows waypoint and target-based navigation, position holding, and location-tagged data collection."
-date = 2022-10-11T17:33:19+11:00
+date = 2025-07-01T02:09:45+08:00
 template = "docs/page.html"
 sort_by = "weight"
 weight = 10
@@ -25,7 +25,7 @@ The [autopilot](/introduction/hardware-options/required-hardware/autopilot.md) h
 
 ## GPS Module
 
-ArduSub maintains the same [GPS module drivers](https://ardupilot.org/copter/docs/common-positioning-landing-page.html) as the rest of the ArduPilot family of firmwares, so a compatible GPS module may be directly connected to the GPS port on the autopilot. Positioning information will only be available when the vehicle is on the surface and the module is out of the water. The module will not be able to obtain a fix if it is underwater due to high frequency radio waves being unable to penetrate the water medium.
+ArduSub maintains the same [GPS module drivers](https://ardupilot.org/sub/docs/common-positioning-landing-page.html) as the rest of the ArduPilot family of firmwares, so a compatible GPS module may be directly connected to the GPS port on the autopilot. Positioning information will only be available when the vehicle is on the surface and the module is out of the water. The module will not be able to obtain a fix if it is underwater due to high frequency radio waves being unable to penetrate the water medium.
 
 Acoustic positioning systems are the only reliable way of providing positioning information underwater.
 
@@ -40,7 +40,7 @@ SBL systems can produce better positioning accuracy in highly reflective environ
 
 ### Supported SBL Systems
 
-* [Water Linked Underwater GPS Explorer Kit](https://store.waterlinked.com/underwater-gps/)
+* [Water Linked Underwater GPS Explorer Kit](https://waterlinked.com/shop/underwater-gps-g2-standard-kit-132#attr=19)
 
 ## USBL Positioning Systems
 
@@ -68,8 +68,9 @@ The relative positioning estimates from a DVL system mean the estimate is prone 
 
 ### Supported DVL Systems
 
-* [Water Linked DVL-A50](https://store.waterlinked.com/product/dvl-a50/?hsCtaTracking=b79feacb-c824-4524-b3e0-2f6513163a7f%7C44cc28cf-75a8-4e25-ac64-ee6bc3e9e5e8)
-* [Cerulean Sonar DVL-75](https://ceruleansonar.com/products/dvl-75?variant=32632308760642)
+* [Water Linked DVL-A50 / DVL-A125](https://bluerobotics.com/store/the-reef/dvl-a50/)
+* [Cerulean Sonar Tracker 650](https://ceruleansonar.com/product/tracker650/)
 * [Teledyne Wayfinder](http://www.teledynemarine.com/Wayfinder)
+* [Nortek Nucleus1000](https://www.nortekgroup.com/products/nucleus1000)
 
 There is a comparison of some common DVLs in [this forum comment](https://discuss.bluerobotics.com/t/dvl-recommendations/10775/2#comparisons-1).
