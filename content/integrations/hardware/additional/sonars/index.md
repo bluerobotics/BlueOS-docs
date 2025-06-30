@@ -40,6 +40,7 @@ Only the Blue Robotics Ping360 Scanning Sonar is fully integrated with the ArduS
 {{ easy_image(src="ping360", width=350) }}
 
 * [Blue Robotics Ping360 Scanning Imaging Sonar](https://bluerobotics.com/store/sensors-sonars-cameras/sonar/ping360-sonar-r1-rp/) ([USB, RS485, or Ethernet](https://bluerobotics.com/learn/changing-communications-interface-on-the-ping360/))
+ * [Cerulean Omniscan 450](https://ceruleansonar.com/imaging/) ForwardScan / SideScan / Compact (Ethernet + [BlueOS Extension](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/#:~:text=SonarView,-Maintainer))
 
 The following scanning sonars have been installed on ArduSub vehicles:
 * [Tritech Micron Sonar](https://www.tritech.co.uk/product/small-rov-mechanical-sector-scanning-sonar-tritech-micron) (RS485 connection through tether)
@@ -50,7 +51,6 @@ The following scanning sonars have been installed on ArduSub vehicles:
 Multibeam imaging sonars are similar to mechanically scanning sonars in that they acoustically image targets in a top-down 2-dimensional representation. However, with multiple sonar beams the refresh rate is much higher presenting a real-time image of what is in front of the vehicle.
 
 The following multibeam sonars have been installed on ArduSub vehicles:
- * [Cerulean Omniscan 450](https://ceruleansonar.com/pages/omniscan-product-page) ForwardScan and SideScan (Ethernet + [BlueOS Extension](https://docs.bluerobotics.com/BlueOS-Extensions-Repository/#:~:text=SonarView,-Maintainer))
  * [Blueprint Subsea Oculus Series Multibeam Sonars](https://www.blueprintsubsea.com/oculus/) (Ethernet)
  * [Tritech International Gemini 720im Multibeam Sonar](https://www.tritech.co.uk/product/gemini-720im) (Ethernet or RS485 connection through tether)
  * [Tritech International Gemini 720ik Multibeam Sonar](https://www.tritech.co.uk/product/gemini-720ik) (Ethernet)
