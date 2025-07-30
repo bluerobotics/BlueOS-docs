@@ -17,9 +17,9 @@ top = false
 BlueOS is a ground-up rewrite software to replace Companion. To use it you'll need to download and flash an SD card.
 It is compatible with **Raspberry Pi 3**, **4**, and **5**.
 
-![Latest Stable](https://img.shields.io/github/v/release/bluerobotics/blueos.svg?label=Latest%20Stable)![Date](https://img.shields.io/github/release-date/bluerobotics/blueos?label=Date)
+[![Latest Stable](https://img.shields.io/github/v/release/bluerobotics/blueos.svg?label=Latest%20Stable)![Date](https://img.shields.io/github/release-date/bluerobotics/blueos?label=Date)](https://github.com/bluerobotics/blueos/releases/latest)
 
-![Latest Beta](https://img.shields.io/github/v/tag/bluerobotics/blueos.svg?label=Latest%20Beta)![Date](https://img.shields.io/github/release-date-pre/bluerobotics/blueos?label=Date)
+[![Latest Beta](https://img.shields.io/github/v/tag/bluerobotics/blueos.svg?label=Latest%20Beta)![Date](https://img.shields.io/github/release-date-pre/bluerobotics/blueos?label=Date)](https://github.com/bluerobotics/blueos/releases)
 
 Recommended operating system images of the latest stable version can be downloaded here:
 
