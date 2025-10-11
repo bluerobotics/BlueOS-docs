@@ -832,6 +832,11 @@ versions by setting the docker tag.
 ## Interface Theme
 
 ### Theme Content
+
+The vehicle identifier components in the sidebar can be modified to suit your vehicle or use-case - just click to edit:
+
+{{ easy_image(src="theme-sidebar", width=300) }}
+
 #### Company Logo
 
 - square images work best
