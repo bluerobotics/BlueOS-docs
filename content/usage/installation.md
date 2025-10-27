@@ -21,6 +21,11 @@ It is compatible with **Raspberry Pi 3**, **4**, and **5**.
 
 [![Latest Beta](https://img.shields.io/github/v/tag/bluerobotics/blueos.svg?label=Latest%20Beta)![Date](https://img.shields.io/github/release-date-pre/bluerobotics/blueos?label=Date)](https://github.com/bluerobotics/blueos/releases)
 
+{% note() %}
+SD cards come in a variety of speed and performance classes, to suit different applications. As an operating system, **BlueOS should be run using a card with _at least_ an A1 [Application Performance Class](https://en.wikipedia.org/wiki/SD_card#Performance_ratings)**, to avoid degraded performance and system throttling.<br><br>
+Critical use-cases are recommended to use A2 cards, and systems intended for onboard recording of one or more video streams should use cards with a suitable [Video Speed Class](https://en.wikipedia.org/wiki/SD_card#Video_speed_class_(V)) rating (and appropriate total capacity) for the expected sustained data rates and file sizes.
+{% end %}
+
 Recommended operating system images of the latest stable version can be downloaded here:
 
 | Board Hardware | Image File (with Base OS) | Notes |
