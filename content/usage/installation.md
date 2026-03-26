@@ -15,7 +15,7 @@ top = false
 ## Download
 
 BlueOS is a ground-up rewrite software to replace Companion. To use it you'll need to download and flash an SD card.
-It is compatible with **Raspberry Pi 3**, **4**, and **5**.
+It is compatible with **Raspberry Pi 3**[^1], **4**, and **5**.
 
 [![Latest Stable](https://img.shields.io/github/v/release/bluerobotics/blueos.svg?label=Latest%20Stable)![Date](https://img.shields.io/github/release-date/bluerobotics/blueos?label=Date)](https://github.com/bluerobotics/blueos/releases/latest)
 
@@ -30,19 +30,27 @@ Recommended operating system images of the latest stable version can be download
 
 | Board Hardware | Image File (with Base OS) | Notes |
 | --- | --- | --- |
-| Raspberry Pi 3B /<br>Raspberry Pi 4B | <a id="v7-bullseye">ARMv7 (32-bit) Bullseye</a> | Standard on Blue Robotics vehicles |
-| Raspberry Pi 5 | <a id="v8-bookworm">ARMv8 (64-bit) Bookworm</a> | Limited testing |
+| Raspberry Pi 4B | <a id="v7-bullseye">ARMv7 (32-bit) Bullseye</a>[^1] | Standard on Blue Robotics vehicles |
+| Raspberry Pi 5 | <a id="v8-bookworm">ARMv8 (64-bit) Bookworm</a>[^2] | Limited testing |
 
 Additional prebuilt operating system images are available in the [releases](https://github.com/bluerobotics/BlueOS/releases),
 along with Docker images for ARMv7/ARMv8 and AMD64 platforms, as well as details of the main changes between different versions.
 
+[^1]:ARMv7 image can also be used for Raspberry Pi 3B boards, but doing so is not recommended for new projects, and is expected to stop being supported in future BlueOS versions.
+
+[^2]:ARMv8 image _may_ also work for the Raspberry Pi 4B, but is not actively tested or supported.
+
+
+
 ## Flash
 
-We recommend using a fresh SD card with at least 4GB capacity, although more storage is recommended for recording data.
+We recommend using a fresh SD card with at least 32GB[^3] capacity, although more storage is recommended for onboard data recording (especially for high bandwidth data like video streams and imaging sonar).
 
 1. Download and install [Balena Etcher](https://www.balena.io/etcher/)
 1. Insert the SD card to your computer (you may need an SD card reader)
 1. Open Etcher, select the image you just downloaded, and flash it onto the SD card
+
+[^3]:SD cards with less than 8GB capacity are not expected to load BlueOS, and 16GB or below may suffer from reduced performance, particularly if also installing BlueOS Extensions.
 
 ## Run
 
