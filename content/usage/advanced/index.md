@@ -302,6 +302,28 @@ Check the [vehicle setup](#vehicle-setup) for more information.
 {% end %}
 
 {% pirate() %}
+#### SITL Simulation
+If you want to do some testing without needing physical hardware, BlueOS includes a virtual
+flight controller "board" for running ArduPilot [SITL](https://ardupilot.org/dev/docs/sitl-simulator-software-in-the-loop.html)
+simulation builds. It comes pre-configured to run the latest stable [ArduSub](https://ardupilot.org/sub/) firmware,
+but can be re-flashed with other ArduPilot firmware versions or variants like a normal flight controller board.
+
+The default setup is for a 6-thruster vectored ROV (like the [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/)),
+but if you want to simulate a different frame (especially if you have just flashed on a different firmware variant) you can click or copy
+[this link](http://blueos-avahi.local:8000/v2.0/docs#/index_v1/set_sitl_frame_sitl_frame_post)[^1], then click
+"Try it out" in the `POST: /sitl_frame` endpoint, select the frame you want in the dropdown, and "Execute".
+{% end %}
+
+{{ easy_image(src="firmware-sitl", class="pirate", width=600) }}
+
+{% pirate() %}
+As an example, to simulate a [BlueBoat](https://bluerobotics.com/store/boat/blueboat/blueboat/) you would first flash the
+SITL board to ArduRover, change the frame to "motorboat" (as described above), then load Blue Robotics' default parameters
+for the vehicle from the [Vehicle Setup](#vehicle-setup) "Configure" page.
+
+[^1]: If the provided link doesn't work, you can instead click the `/v2.0/docs`
+link in the "version" column at the far right of the "Autopilot Manager" row in the [Available Services](#available-services) page.
+
 #### Lua Scripts
 ArduPilot firmware supports using [Lua Scripts](https://ardupilot.org/dev/docs/common-lua-scripts.html) to add
 custom functionality and drivers without needing to modify or build the firwmare itself. Once enabled 
