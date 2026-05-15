@@ -259,8 +259,7 @@ Pages are sorted alphabetically.
 The Autopilot Firmware page provides basic information about the active
 autopilot, along with options to:
 {% pirate() %}
-- Change board (select a connected board, or run an
-[SITL](https://www.ardusub.com/developers/sitl.html) simulation)
+- Change board (select a connected board, or run a [SITL simulation](#sitl-simulation))
 - Start the autopilot
 - Stop the autopilot
 {% end %}
@@ -309,8 +308,14 @@ simulation builds. It comes pre-configured to run the latest stable [ArduSub](ht
 but can be re-flashed with other ArduPilot firmware versions or variants like a normal flight controller board.
 
 The default setup is for a 6-thruster vectored ROV (like the [BlueROV2](https://bluerobotics.com/store/rov/bluerov2/)),
-but if you want to simulate a different frame (especially if you have just flashed on a different firmware variant) you can click or copy
-[this link](http://blueos-avahi.local:8000/v2.0/docs#/index_v1/set_sitl_frame_sitl_frame_post)[^1], then click
+and is "located" in a lake in Brazil, where the BlueOS core development team is based. The vehicle will show up on the map in
+control station software, and can be controlled with a joystick, but the simulation is only for telemetry - there's no video
+output! If you'd like to try driving around a simulated full ROV in a swimming pool (fish included!) you can instead 
+[run our hosted version](https://blueos.cloud/bluesim/) of [BlueSim](https://github.com/bluerobotics/bluesim), and open
+[Cockpit](https://bluerobotics.com/cockpit) from the sidebar.
+
+If you want to simulate a different vehicle frame in SITL (especially if you have just flashed on a different firmware variant) you
+can click or copy [this link](http://blueos-avahi.local:8000/v2.0/docs#/index_v1/set_sitl_frame_sitl_frame_post)[^1], then click
 "Try it out" in the `POST: /sitl_frame` endpoint, select the frame you want in the dropdown, and "Execute".
 {% end %}
 
