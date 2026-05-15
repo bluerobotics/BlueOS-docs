@@ -301,6 +301,18 @@ It's highly recommended to **flash the default parameters** for the vehicle when
 Check the [vehicle setup](#vehicle-setup) for more information.
 {% end %}
 
+{% pirate() %}
+#### Lua Scripts
+ArduPilot firmware supports using [Lua Scripts](https://ardupilot.org/dev/docs/common-lua-scripts.html) to add
+custom functionality and drivers without needing to modify or build the firwmare itself. Once enabled 
+(via the [`SCR_ENABLE`](https://ardupilot.org/sub/docs/parameters.html#scr-parameters) parameter)
+they can be conveniently managed through the `lua_scripts` folder in the [File Browser](#file-browser).
+
+Currently this functionality is only available to vehicles with a Linux-based flight controller board
+(like a [Navigator](https://bluerobotics.com/store/comm-control-power/control/navigator/)), but general
+support for serial-connected autopilots is [on the way](https://github.com/bluerobotics/BlueOS/issues/2722)!
+{% end %}
+
 ### Autopilot Parameters
 `New in 1.1`
 
