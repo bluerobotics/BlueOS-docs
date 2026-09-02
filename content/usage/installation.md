@@ -68,7 +68,7 @@ For developers with alternative hardware, or who would rather install over a pre
 
 <script type="text/javascript">
 async function fetchLatestReleaseInfo() {
-  const url = "https://api.github.com/repos/bluerobotics/BlueOS/releases/tags/1.4.2";
+  const url = "https://api.github.com/repos/bluerobotics/BlueOS/releases/latest";
 
   const response = await fetch(url)
   if (!response.ok) {
