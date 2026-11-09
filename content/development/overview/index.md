@@ -97,6 +97,10 @@ Of note are
 
 The BlueOS development team have done some presentations about what BlueOS is for, and how it can be used / integrated with. Bear in mind that presentation recordings are snapshots of history, and the information in them gets outdated over time as development progress is made.
 
+### Development History and Direction
+`ArduPilot Developers Conference (October 2026)`
+<iframe width="560" height="315" src="https://www.youtube.com/embed/idHtziSDzGY" title="YouTube video player" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+
 ### BlueOS Development Features
 `ArduPilot Developers Conference (October 2024)`
 <iframe width="560" height="315" src="https://www.youtube.com/embed/46g0-ASqwc4" title="YouTube video player" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
